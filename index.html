@@ -1,38 +1,46 @@
 ---
-layout: default 
+layout: page
+description: "我干了什么 究竟拿了时间换了什么"
 ---
-<header class="bloghead">
-    <h1 class="bloghead-title">
-    <a href="{{ site.url }}/">{{ site.name }}<span>&#39;s blog</span></a>
-  </h1>
-    <nav class="bloghead-nav">
-        {% for nav in site.nav %}
-        <a href="{{ nav.href }}">{{ nav.name }}<span> &nbsp;/&nbsp; </span></a> {% endfor %}
-    </nav>
-</header>
-<div class="content">
-    {% if site.posts.size == 0 %}
-    <h2>No post found</h2> {% else %} {% for post in paginator.posts %}
-    <div class="post-list">
-        <h2 class="post-title">
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </h2> {% if post.description %}
-        <p>{{ post.description }}</p>
-        {% endif %}
-        <div class="post-date">
-            <time>{{ post.date | date_to_string }}</time>
-        </div>
-    </div>
-    {% endfor %} {% if paginator.total_pages > 1 %}
-    <div class="pages">
-      {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><</a>
-      {% endif %}
 
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">></a>
-      {% endif %}
-    </div>
-    {% endif %}
-  {% endif %}
+{% for post in paginator.posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+        <div class="post-content-preview">
+            {% if post.lang == 'en' %}
+                {{ post.content | strip_html | truncate:300 }}
+            {% else %}
+                {{ post.content | strip_html | truncate:200 }}
+            {% endif %}
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
 </div>
+<hr>
+{% endfor %}
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}
