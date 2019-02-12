@@ -50,6 +50,8 @@ Given a roman numeral, convert it to an integer. Input is guaranteed to be withi
 ## 代码
 
 ```c++
+#include<unordered_map>
+using namespace std;
 class Solution {
 public:
     int romanToInt(string s) {
