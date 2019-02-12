@@ -4,10 +4,10 @@ title:      "「LeetCode」——「7」—— Reverse Integer"
 subtitle:   " 记录打码。 "
 date:       2019-02-12 
 author:     "LeeHW"
-header-img: "img/post-bg-digital-native.jpg"
+header-img: "img/post-bg-e2e-ux.jpg"
 catalog: true
 tags:
-    - LeetCode
+    - LeetCode_Easy
 ---
 
 ## 题目
