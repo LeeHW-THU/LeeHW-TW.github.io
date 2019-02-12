@@ -26,7 +26,7 @@ Given a 32-bit signed integer, reverse digits of an integer
 
  Assume we are dealing with an environment which could only store integers
 
- within the 32-bit signed integer range: [−231,  231 − 1]. For the purpose of
+ within the 32-bit signed integer range: [−2^31,  2^31 − 1]. For the purpose of
 
  this problem, assume that your function returns 0 when the reversed integer
 
@@ -37,7 +37,21 @@ Given a 32-bit signed integer, reverse digits of an integer
 ## 代码
 
 ```c++
+class Solution
+{
 
+  public:
+    int reverse(int x)
+    {
+        long result = 0;
+        while (x != 0)
+        {
+            result = 10 * result + x % 10;
+            x /= 10;
+        }
+        return (result < INT_MIN || result > INT_MAX) ? 0 : result;
+    }
+};
 ```
 
 
@@ -46,8 +60,22 @@ Given a 32-bit signed integer, reverse digits of an integer
 
 ## 结语
 
+溢出检查：int型的数值范围：【-2147483648，2147483647】
 
+使用的方法如下（不停的推出X最后一个数字，Result进位）：
 
-
+| X          | Result     | Formula                |
+| ---------- | ---------- | ---------------------- |
+| 1003257462 | 0          | 2=10*result+2          |
+| 100325746  | 2          | 26=10*result+6         |
+| 10032574   | 26         | 264=10*result+4        |
+| 1003257    | 264        | 2647=10*result+7       |
+| 100325     | 2647       | 26475=10*result+5      |
+| 10032      | 26475      | 264752=10*result+2     |
+| 1003       | 264752     | 2647523=10*result+3    |
+| 100        | 2647523    | 26475230=10*result+0   |
+| 10         | 26475230   | 264752300=10*result+0  |
+| 1          | 264752300  | 2647523001=10*result+1 |
+| 0          | 2647523001 | return                 |
 
 
