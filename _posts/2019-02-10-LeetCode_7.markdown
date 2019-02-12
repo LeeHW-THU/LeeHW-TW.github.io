@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      "「LeetCode」——「9」—— Palindrome Number"
+title:      "「LeetCode」——「7」—— Reverse Integer"
 subtitle:   " 记录打码。 "
-date:       2019-02-12 
+date:       2019-02-10 
 author:     "LeeHW"
 header-img: "img/post-bg-e2e-ux.jpg"
 catalog: true
@@ -12,43 +12,44 @@ tags:
 
 ## 题目
 
-Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
+Testcase Example:  '123'
+
+Given a 32-bit signed integer, reverse digits of an integer
 
 | Example | Input | Output |
 | ------- | ----- | ------ |
-| Case_1  | 121   | True   |
-| Case_2  | -121  | False  |
-| Case_3  | 10    | False  |
+| Case_1  | 123   | 321    |
+| Case_2  | -123  | -321   |
+| Case_3  | 120   | 21     |
 
-Follow up:
+###  Note:
 
-Coud you solve it **without** converting the integer to a string?
+ Assume we are dealing with an environment which could only store integers
+
+ within the 32-bit signed integer range: [−2^31,  2^31 − 1]. For the purpose of
+
+ this problem, assume that your function returns 0 when the reversed integer
+
+ overflows.
 
 ---
 
 ## 代码
 
 ```c++
-class Solution {
-public:
-    bool isPalindrome(int x) {
-        if (x<0) {
-            return false;
-        }
-        long flag_1=0;
-        long flag_2;
-        flag_2=x;
-        while(x!=0){
-            flag_1=10*flag_1+x%10;
-            x/=10;
-        }
-        if (flag_1==flag_2) {
-            return true;
-        }
-        else
+class Solution
+{
+
+  public:
+    int reverse(int x)
+    {
+        long result = 0;
+        while (x != 0)
         {
-            return false;
+            result = 10 * result + x % 10;
+            x /= 10;
         }
+        return (result < INT_MIN || result > INT_MAX) ? 0 : result;
     }
 };
 ```
@@ -59,7 +60,9 @@ public:
 
 ## 结语
 
-第一反应就是运用第「7」题中的Reverse Integer方法取反之后再与x进行比较。
+溢出检查：int型的数值范围：【-2147483648，2147483647】
+
+使用的方法如下（不停的推出X最后一个数字，Result进位）：
 
 | X          | Result     | Formula                |
 | ---------- | ---------- | ---------------------- |
