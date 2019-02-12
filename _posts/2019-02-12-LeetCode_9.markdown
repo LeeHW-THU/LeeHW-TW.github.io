@@ -1,0 +1,78 @@
+---
+layout:     post
+title:      "「LeetCode」——「9」—— Palindrome Number"
+subtitle:   " 记录打码。 "
+date:       2019-02-12 
+author:     "LeeHW"
+header-img: "img/post-bg-e2e-ux.jpg"
+catalog: true
+tags:
+    - LeetCode_Easy
+---
+
+## 题目
+
+Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
+
+| Example | Input | Output |
+| ------- | ----- | ------ |
+| Case_1  | 121   | True   |
+| Case_2  | -121  | False  |
+| Case_3  | 10    | False  |
+
+Follow up:
+
+Coud you solve it **without** converting the integer to a string?
+
+---
+
+## 代码
+
+```c++
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if (x<0) {
+            return false;
+        }
+        long flag_1=0;
+        long flag_2;
+        flag_2=x;
+        while(x!=0){
+            flag_1=10*flag_1+x%10;
+            x/=10;
+        }
+        if (flag_1==flag_2) {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+};
+```
+
+
+
+---
+
+## 结语
+
+第一反应就是运用第「7」题中的Reverse Integer方法取反之后再与x进行比较。
+
+| X          | Result     | Formula                |
+| ---------- | ---------- | ---------------------- |
+| 1003257462 | 0          | 2=10*result+2          |
+| 100325746  | 2          | 26=10*result+6         |
+| 10032574   | 26         | 264=10*result+4        |
+| 1003257    | 264        | 2647=10*result+7       |
+| 100325     | 2647       | 26475=10*result+5      |
+| 10032      | 26475      | 264752=10*result+2     |
+| 1003       | 264752     | 2647523=10*result+3    |
+| 100        | 2647523    | 26475230=10*result+0   |
+| 10         | 26475230   | 264752300=10*result+0  |
+| 1          | 264752300  | 2647523001=10*result+1 |
+| 0          | 2647523001 | return                 |
+
+
