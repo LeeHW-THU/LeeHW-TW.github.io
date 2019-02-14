@@ -6,13 +6,13 @@ email: 1003257462@qq.com
 description: "LeeHW 个人瞎写的博客"
 keyword: "LeeHW，Web"
 url: "https://leehw-tw.github.io/"              # your host, for absolute URL
-baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: ""                           # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
 future: true
 
 # SNS settings
-RSS: false
+RSS: true
 #weibo_username:     huxpro
 #zhihu_username:     huxpro
 github_username:    LeeHW-TW
@@ -25,21 +25,25 @@ facebook_username:  people/%E6%9D%8E%E7%AB%91%E7%B7%AF/100012259057120
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 highlighter: rouge
+textColor: #FF0000
 permalink: pretty
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
-anchorjs: true  
-gems: [jekyll-paginate]                        # if you want to customize anchor. check out line:181 of `post.html`
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 # If you have timezone issue (e.g. #68) in China, uncomment to use this:
-#timezone: CN  
+timezone: CN  
 
-
+# Back to top 回到顶部by ray-eldath
+b2t: true
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
 # make sure you have this gem installed
 # `$ gem install jekyll-paginate`
 plugins: [jekyll-paginate]
+plugins: [jekyll-sitemap]
+gems: [jekyll-sitemap]
+paginate_path: "page:num"   #分页页面路径格式
 
 
 
@@ -57,14 +61,20 @@ kramdown:
       line_numbers: true
       start_line: 1
 
-
-
-# Disqus settings
-#disqus_username: leehw-tw.github.io
+# Comment
+#comment:
+    #disqus: yizibi
 
 # Netease settings
 netease_comment: false
 
+gitalk:
+   enable: true
+   owner: LeeHW
+   repo: leehw-tw.github.io
+   clientID: db85b5fbb6a63cd38bb5
+   clientSecret: f94f9cdeb809853ec9d47d48d2cbba4aac611a77
+   admin: LeeHW
 
 
 # Analytics settings
@@ -89,13 +99,13 @@ sidebar-avatar: /img/avatar-hux-ny.jpg      # use absolute URL, seeing it's used
 
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 0              # A tag will be featured if the size of it is more than this condition value
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
 
 
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
-service-worker: true
+service-worker: false
 
 
 
@@ -103,6 +113,9 @@ service-worker: true
 page-mathjax: false
 
 
-
+#    {
+#	title: "Junhua's Blog",
+#	href: "https://blog.searchinfogo.com"
+#    }
 # Friends
 #friends: []

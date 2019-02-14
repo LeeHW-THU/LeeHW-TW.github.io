@@ -7,7 +7,57 @@ layout: default
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
 <!-- Post Header -->
-{% include intro-header.html type='post' %}
+<!-- canvas-nest.min.js -->
+<!--<script type="text/javascript" src="../../../../js/canvas-nest.min.js"></script>-->
+<head>
+    <link href="../../../../css/rouge.css" rel="stylesheet">
+</head>
+<script type="text/javascript" color="238,205,205" opacity='0.7' zIndex="-2" count="99" src="../../../../js/canvas-nest.min.js"></script>
+<!--//添加评论系统-->
+<link rel="stylesheet" href="../../../../css/gitalk.css">
+    <script src="../../../../js/gitalk.min.js"></script>
+<!--    打赏-->
+<link href="/css/reward.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
+    }
+
+    {% if page.header-mask %}
+    header.intro-header .header-mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0,0,0, {{ page.header-mask }});
+    }
+    {% endif %}
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        {% for tag in page.tags %}
+                        <a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                    <h1>{{ page.title }}</h1>
+                    {% comment %}
+                        always create a h2 for keeping the margin , Yizibi
+                    {% endcomment %}
+                    {% comment %} if page.subtitle {% endcomment %}
+                    <h2 class="subheading">{{ page.subtitle }}</h2>
+                    {% comment %} endif {% endcomment %}
+                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
 <!-- Post Content -->
 <article>
@@ -29,9 +79,46 @@ layout: default
                 </select>
                 {% endif %}
 
+
 				{{ content }}
 
+                <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a><a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a></div>
+                <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["weixin","qzone","tsina","tqq","twi","fbook"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["weixin","qzone","tsina","tqq","twi","fbook"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
                 <hr style="visibility: hidden;">
+
+            <!-- 打赏功能 -->
+            <div>
+                <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+                <div>☛兄dei，请我喝杯茶☚</div>
+                <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+                    <span>打赏</span>
+                </button>
+                <div id="QR" style="display: none;">
+                        
+                        
+                <div id="wechat" style="display: inline-block">
+                <img id="wechat_qr" src="/img/payimg/weipayimg.jpg" alt="yizibi 微信支付"/>
+                            <p>微信支付</p>
+                </div>
+                        
+                        
+                        
+                <div id="alipay" style="display: inline-block">
+                <img id="alipay_qr" src="/img/payimg/alipayimg.jpg" alt="yizibi 支付宝"/>
+                <p>支付宝</p>
+                </div>
+                        
+                        
+                        
+                        
+                </div>
+                </div>
+                
+            </div>
+            
+
+   <!--  上一篇或者下一篇post按钮 -->
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">
@@ -50,20 +137,48 @@ layout: default
                     </li>
                     {% endif %}
                 </ul>
-                <hr style="visibility: hidden;">
 
-                {% if site.disqus_username %}
+
+<!--                {% if site.disqus_username %}-->
                 <!-- disqus 评论框 start -->
-                <div class="comment">
-                    <div id="disqus_thread" class="disqus-thread"></div>
-                </div>
+<!--                <div class="comment">-->
+<!--                    <div id="disqus_thread" class="disqus-thread"></div>-->
+<!--                </div>-->
                 <!-- disqus 评论框 end -->
-                {% endif %}
+<!--                {% endif %}-->
+
+<!--                <div id="disqus_thread"></div>-->
+<!--                <script>-->
+<!--                    -->
+<!--                    /**-->
+<!--                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.-->
+<!--                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/-->
+<!--                 var disqus_config = function () {-->
+<!--                 this.page.url = site.page.url;  // Replace PAGE_URL with your page's canonical URL variable-->
+<!--                 this.page.identifier = site.page.identifier; // Replace PAGE_IDENTIFIER with your page's unique identifier variable-->
+<!--                 };-->
+<!--                 -->
+<!--                (function() { // DON'T EDIT BELOW THIS LINE-->
+<!--                 var d = document, s = d.createElement('script');-->
+<!--                 s.src = 'https://yizibi.disqus.com/embed.js';-->
+<!--                 s.setAttribute('data-timestamp', +new Date());-->
+<!--                 (d.head || d.body).appendChild(s);-->
+<!--                 })();-->
+<!--                    </script>-->
+<!--                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
+
 
                 {% if site.netease_comment %}
                 <!-- 网易云跟帖 评论框 start -->
                 <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
                 <!-- 网易云跟帖 评论框 end -->
+                {% endif %}
+                
+                <!--   gitalk       -->
+                {% if site.gitalk %}
+                <div class="comment">
+                    {% include comments.html %}
+                </div>
                 {% endif %}
             </div>  
 
@@ -91,16 +206,42 @@ layout: default
                 sidebar-container">
 
                 <!-- Featured Tags -->
-                {% include featured-tags.html bottom=true %}
+                {% if site.featured-tags %}
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				{% for tag in site.tags %}
+                            {% if tag[1].size > site.featured-condition-size %}
+                				<a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+                                    {{ tag[0] }}
+                                </a>
+                            {% endif %}
+        				{% endfor %}
+        			</div>
+                </section>
+                {% endif %}
 
                 <!-- Friends Blog -->
-                {% include friends.html %}
+                {% if site.friends %}
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    {% for friend in site.friends %}
+                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
             </div>
         </div>
     </div>
+    
+
+    
 </article>
 
-<!-- add support for mathjax by voleking-->
+
+<!-- Add support for Mathjax by Voleking-->
 {% if page.mathjax %}
   {% include mathjax_support.html %}
 {% endif %}
@@ -120,7 +261,6 @@ layout: default
 </script>
 <!-- 网易云跟帖JS代码 end -->
 {% endif %}
-
 
 {% if site.disqus_username %}
 <!-- disqus 公共JS代码 start (一个网页只需插入一次) -->

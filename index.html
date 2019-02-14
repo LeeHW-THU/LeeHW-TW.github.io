@@ -15,11 +15,7 @@ description: "混吃摸鱼，瞎写代码————"
         </h3>
         {% endif %}
         <div class="post-content-preview">
-            {% if post.lang == 'en' %}
-                {{ post.content | strip_html | truncate:300 }}
-            {% else %}
-                {{ post.content | strip_html | truncate:200 }}
-            {% endif %}
+            {{ post.content | strip_html | truncate:200 }}
         </div>
     </a>
     <p class="post-meta">
@@ -44,3 +40,7 @@ description: "混吃摸鱼，瞎写代码————"
     {% endif %}
 </ul>
 {% endif %}
+
+<!-- 分页取消 -->
+<!--{% include pagination.html %}-->
+
