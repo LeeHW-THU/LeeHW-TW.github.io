@@ -174,7 +174,11 @@
 </script>
 
 
-    <!-- Image to hack wechat -->
+    <!--//添加评论系统-->
+<link rel="stylesheet" href="../../../../css/gitalk.css">
+<script src="../../../../js/gitalk.min.js"></script>
+
+<!-- Image to hack wechat -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
 <!-- <img src="/img/post-bg-e2e-ux.jpg" width="0" height="0"> -->
 
@@ -414,6 +418,26 @@
                     
                 </ul>
                 <hr style="visibility: hidden;">
+                <!--   gitalk       -->
+
+<div class="comment">
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+var gitalk = new Gitalk({
+    id: '2018-09-26 00:32:24 +0000',
+    clientID: 'db85b5fbb6a63cd38bb5',
+    clientSecret: '9a47030c72d7e1ae99ebebeb84b235f6c836faf1',
+    repo: 'leehw-tw.github.io',
+    owner: 'leehw-tw',
+    admin: ['leehw-tw'], 
+    labels: ['Gitalk'],
+})
+gitalk.render('gitalk-container')
+</script> 
+
+</div>
 
                 
 
