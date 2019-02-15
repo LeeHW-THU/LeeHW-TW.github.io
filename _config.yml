@@ -39,6 +39,7 @@ anchorjs: true                          # if you want to customize anchor. check
 # make sure you have this gem installed
 # `$ gem install jekyll-paginate`
 plugins: [jekyll-paginate]
+plugins: [jekyll-sitemap]
 
 
 
