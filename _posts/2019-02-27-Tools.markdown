@@ -2,7 +2,7 @@
 layout:     post
 title:      "介绍一下打码环境——Vscode + LeetCode（plugin）"
 subtitle:   " 记录打码。 "
-date:       2019-02-027
+date:       2019-02-27
 author:     "LeeHW"
 header-img: "img/post-bg-digital-native.jpg"
 catalog: true
