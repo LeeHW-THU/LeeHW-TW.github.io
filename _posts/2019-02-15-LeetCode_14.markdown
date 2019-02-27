@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "「LeetCode」——「13」—— Roman to Integer"
+title:      "「LeetCode」——「14」—— Longest Common Prefix"
 subtitle:   " 记录打码。 "
 date:       2019-02-15 
 author:     "LeeHW"
@@ -11,6 +11,15 @@ tags:
 ---
 
 ## 题目
+
+​	Write a function to find the longest common prefix string amongst an array of strings.
+
+If there is no common prefix, return an empty string "".
+
+| Example |           Input            | Output |
+| :-----: | :------------------------: | :----: |
+| Case_1  | ["flower","flow","flight"] |  "fl"  |
+| Case_2  |  ["dog","racecar","car"]   |   ""   |
 
 
 
@@ -46,4 +55,12 @@ public:
 ---
 
 ## 结语
+
+**注意**：提交时发现有strs.size()==0的情况，加个if判断 直接返回“”即可。
+
+思路直接拿第一个与后面进行比较。
+
+​	**都相同** 	则		加入res中继续遍历，
+
+​	**不相同** 	则		返回res。
 
