@@ -69,7 +69,7 @@ gitalk:
    owner: LeeHW
    repo: leehw-tw.github.io
    clientID: db85b5fbb6a63cd38bb5
-   clientSecret: f94f9cdeb809853ec9d47d48d2cbba4aac611a77
+   clientSecret: 9a47030c72d7e1ae99ebebeb84b235f6c836faf1
    admin: LeeHW
 
 

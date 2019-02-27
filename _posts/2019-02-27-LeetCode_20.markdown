@@ -1,0 +1,85 @@
+---
+layout:     post
+title:      "「LeetCode」——「20」—— Valid Parentheses"
+subtitle:   " 记录打码。 "
+date:       2019-02-27 
+author:     "LeeHW"
+header-img: "img/post-bg-digital-native.jpg"
+catalog: true
+tags:
+    - LeetCode_Easy
+---
+
+## 题目
+
+​	Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. 
+
+An input string is valid if:
+
+​	Open brackets must be closed by the same type of brackets.
+
+​	Open brackets must be closed in the correct order.
+
+​	**Note that an empty string is also considered valid.**
+
+| Example | Input     | Output |
+| ------- | --------- | ------ |
+| Case_1  | ( )       | True   |
+| Case_2  | ( ){ }[ ] | True   |
+| Case_3  | ( ]       | False  |
+| Case_4  | ( [ ) ]   | False  |
+| Case_5  | { [ ] }   | True   |
+
+
+
+---
+
+## 代码
+
+```c++
+#include<stack>
+using namespace std;
+class Solution {
+public:
+    bool isValid(string s) {
+        stack<char> res;
+        if (s.size()==0) {
+            return true;
+        }
+        for(int i = 0; i < s.size(); i++)
+        {
+            if (res.empty()) {
+                res.push(s[i]);
+            }
+            else if (res.top()=='('&&s[i]==')'||
+            res.top()=='{'&&s[i]=='}'||
+            res.top()=='['&&s[i]==']')
+            {
+                res.pop();
+            }
+            else
+            {
+                res.push(s[i]);
+            }
+        }
+        return res.empty();
+        
+    }
+};
+```
+
+
+
+---
+
+## 结语
+
+​	以堆栈的思想解题，依次将这些字符入栈(push)，判断栈顶(top)元素与当前元素是否能配对上
+
+​		**是**	则	出栈（pop）
+
+​		**非**	则	入栈（push）
+
+最后执行判断栈是否为空。
+
+![leetcode_20](img/leetcode_20.png)
