@@ -82,4 +82,4 @@ public:
 
 最后执行判断栈是否为空。
 
-![leetcode_20](img/leetcode_20.png)
+![leetcode_20](http://lihongwei.site/img/leetcode_20.png)
