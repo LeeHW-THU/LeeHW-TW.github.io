@@ -125,7 +125,7 @@ public:
 
 只要满足big3%n==0 **即n为3的幂级数**
 
-```c++
+```C++
 class Solution {
 public:
     bool isPowerOfThree(int n) {
