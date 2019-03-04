@@ -1,0 +1,159 @@
+---
+layout:     post
+title:      "「LeetCode」——「231+326+342」—— Power of Two?Three?Four?"
+subtitle:   " 记录打码。 "
+date:       2019-03-04 
+author:     "LeeHW"
+header-img: "img/post-bg-digital-native.jpg"
+catalog: true
+tags:
+    - LeetCode_Easy
+---
+
+## 题目
+
+* Given an integer, write a function to determine if it is a power of Two?Three?Four?
+
+---
+
+## 代码
+
+```c++
+class Solution {
+public:
+    bool isPowerOfTwo(int num) {
+        if (num<=0) return false;
+        if (num==1) return true;
+        long long res=1;
+        if (num>1){
+            while(res<num){
+                // 2? 3? 4? 同类型
+                if (res<num) res=res*2;
+                if (res>num) return false;
+            }
+        }
+        return true;
+    }
+};
+```
+
+
+
+---
+
+## 结语
+
+​	直接采取比较暴力的方法，对res=1循环与幂相乘，如果最后res=num 那就说明num是题目的幂级数。（不建议采取此方法）
+
+------
+
+## 补充：判断2的幂级数
+
+​	若是求2的幂级数，巧妙运用数学知识可发现规律：
+
+| 十进制 | 二进制 |
+| :----: | :----: |
+|   1    |   1    |
+|   2    |   10   |
+|   4    |  100   |
+|   8    |  1000  |
+|   16   | 10000  |
+
+使用了比较酷炫的写法：
+
+```c++
+class Solution {
+public:
+    bool isPowerOfTwo(int n) {
+        if (n<=0) return false;
+        return ((n&(n-1))==0);
+    }
+};
+```
+
+**n&(n-1))==0** 并运算 保证结果为 1（0）*
+
+
+
+------
+
+## 补充：判断4的幂级数
+
+由2的幂级数进行扩展思考：
+
+​	2、8		false（过滤）；    2=10      8=1000
+
+​	4、16		true（保留） ；    4=100    16=10000
+
+所以只要确保0的个数为**偶数**即可。
+
+依旧很酷炫的代码如下：
+
+```C++
+class Solution {
+public:
+    bool isPowerOfTwo(int n) {
+        if (n<=0) return false;
+        return ((n&(n-1))==0 && (n&0x55555555));
+    }
+};
+```
+
+0x55555555 = 1010101010101010101010101010101 (偶数位为0，奇数位为1）
+
+例：
+
+​	0101 & 1000 = 0000
+
+​	0101 & 0100 = 0100
+
+即 过滤掉了奇数个0的情况。
+
+
+
+
+
+------
+
+## 补充：判断3的幂级数
+
+例： 3 9 27 81
+
+设 big3=3^k  即 k=log3（maxint）
+
+把题目转化为 求：**在int范围内 最大3的幂级数**
+
+只要满足big3%n==0 **即n为3的幂级数**
+
+```c++
+class Solution {
+public:
+    bool isPowerOfThree(int n) {
+        if(n<=0) return false;
+        const int maxint=0x7fffffff;
+        int k=log(maxint)/log(3);//换底 log3
+        int big3=pow(3,k);//求出在int范围内 最大3的幂级数
+        return (big3%n==0);
+    }
+};
+```
+
+**注意：此方法只对素数的幂级数有用**
+
+
+
+------
+
+## 补充：进制的特殊形式
+
+0xaaaaaaaa = 101010101010101010101010101010 (偶数位为1，奇数位为0）
+
+0x55555555 = 1010101010101010101010101010101 (偶数位为0，奇数位为1）
+
+0x33333333 = 110011001100110011001100110011 (1和0每隔两位交替出现)
+
+0xcccccccc = 11001100110011001100110011001100 (0和1每隔两位交替出现)
+
+0x0f0f0f0f = 00001111000011110000111100001111 (1和0每隔四位交替出现)
+
+0xf0f0f0f0 = 11110000111100001111000011110000 (0和1每隔四位交替出现)
