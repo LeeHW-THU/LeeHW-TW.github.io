@@ -1,0 +1,160 @@
+---
+layout:     post
+title:      "「LeetCode」——「8」—— String to Integer (atoi)"
+subtitle:   " 记录打码。 "
+date:       2019-03-04 
+author:     "LeeHW"
+header-img: "img/post-bg-digital-native.jpg"
+catalog: true
+tags:
+    - LeetCode_Medium
+---
+
+## 题目
+
+Implement `atoi` which converts a string to an integer.
+
+The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.
+
+The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.
+
+If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.
+
+If no valid conversion could be performed, a zero value is returned.
+
+
+
+ Example 1:
+
+Input: "42"
+
+Output: 42
+
+
+
+
+
+Example 2:
+
+Input: "   -42"
+
+Output: -42
+
+Explanation: The first non-whitespace character is '-', which is the minus sign.Then take as many numerical digits as possible, which gets 42.
+
+
+
+
+
+Example 3:
+
+Input: "4193 with words"
+
+Output: 4193
+
+Explanation: Conversion stops at digit '3' as the next character is not a numerical digit.
+
+
+
+
+
+Example 4:
+
+Input: "words and 987"
+
+Output: 0
+
+Explanation: The first non-whitespace character is 'w', which is not a numerical digit or a +/- sign. Therefore no valid conversion could be performed.
+
+
+
+
+
+Example 5:
+
+Input: "-91283472332"
+
+Output: -2147483648
+
+Explanation: The number "-91283472332" is out of the range of a 32-bit signed integer.Thefore INT_MIN (−231) is returned.
+
+**Note:**
+
+- Only the space character `' '` is considered as whitespace character.
+- Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−2^31,  2^31 − 1]. If the numerical value is out of the range of representable values, INT_MAX (231 − 1) or INT_MIN (−231) is returned.
+
+---
+
+## 代码
+
+```c++
+class Solution {
+public:
+    int myAtoi(string str) {
+        const long long max=0x100000000;
+        long long ans = 0;
+        bool flag=false;//正负号标记
+        int st=0;//下标
+        while(st<str.length()&&str[st]==' ')
+        {
+            st++; //下标跳过‘ ’情况
+        }
+        if(st<str.length()&&str[st]=='+')
+        {
+
+            st++;//下标跳过‘+’情况
+        }
+        else
+        {
+            if(st<str.length()&&str[st]=='-')
+            {
+                //下标跳过‘-’情况 并标记负号
+                flag=true;
+                st++;
+            }
+        }
+        
+        //循环从st下标开始
+        for(int i=st;i<str.length();i++)
+        {
+            
+            if(str[i]>='0'&&str[i]<='9'){
+                //使用str[i] - '0' 转换数值类型
+                ans = ans * 10 + (str[i] - '0');
+                //避免数值超过INT_MAX变为负数情况
+                if(ans>max) ans=max;
+            }
+            else{
+                break;
+            }
+        }
+        if(flag) ans=-ans;
+        if(ans>INT_MAX) ans=INT_MAX;
+        if(ans<INT_MIN) ans=INT_MIN;
+        return ans;
+    }
+};
+```
+
+
+
+---
+
+## 结语
+
+此题的提交数非常多 但是AC率不高，由此可见有很多的恶心情况需要考虑。
+
+​	下面这个写法非常简单，用了C++标准库的Stringstream中流之间的输入输出来控制类型的转化，所以精髓还在于对流的输入输出理解，源代码我放在下面，有兴趣的同学可以研究一下标准库中流的出入输出实现方法。研究透这个问题的话对C++中流的理解也会加深很多。
+
+```c++
+class Solution {
+public:
+    int myAtoi(string str) {
+        int out = 0;
+        stringstream ss;
+        ss << str;
+        ss >> out;
+        return out;
+    }
+};
+```
