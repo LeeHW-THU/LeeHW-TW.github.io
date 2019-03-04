@@ -89,7 +89,7 @@ public:
 
 依旧很酷炫的代码如下：
 
-```C++
+```c++
 class Solution {
 public:
     bool isPowerOfTwo(int n) {
@@ -125,7 +125,7 @@ public:
 
 只要满足big3%n==0 **即n为3的幂级数**
 
-```C++
+```c++
 class Solution {
 public:
     bool isPowerOfThree(int n) {
