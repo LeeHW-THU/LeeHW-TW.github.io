@@ -1,0 +1,139 @@
+---
+layout:     post
+title:      "「LeetCode」——「69」—— Sqrt(x)"
+subtitle:   " 记录打码。 "
+date:       2019-03-05 
+author:     "LeeHW"
+header-img: "img/post-bg-digital-native.jpg"
+catalog: true
+tags:
+    - LeetCode_Easy
+    - LeetCode_二分搜索
+---
+
+## 题目
+
+Implement `int sqrt(int x)`.
+
+Compute and return the square root of *x*, where *x* is guaranteed to be a non-negative integer.
+
+Since the return type is an integer, the decimal digits are truncated and only the integer part of the result is returned.
+
+**Example 1:**
+
+```
+Input: 4
+Output: 2
+```
+
+**Example 2:**
+
+```
+Input: 8
+Output: 2
+Explanation: The square root of 8 is 2.82842..., and since 
+             the decimal part is truncated, 2 is returned.
+```
+
+---
+
+## 代码
+
+#### ①二分法
+
+```c++
+class Solution {
+public:
+    bool guess(long x,long y)
+    {
+        return (long)x*x<=y;
+        //Input中存在INT_MAX样例，相乘会溢出，所以使用long
+    }
+    int mySqrt(int y) {
+        //同理 long
+        long L=0,R=(long)y+1; //存在0，1的情况 搜索区间左闭右开 
+        long ans=0;
+        while(L<R)
+        {
+            long mid=(L+R)/2;
+            if(guess(mid,y))
+            {
+                ans=mid;
+                L=mid+1;
+                //若是L=mid，L会始终在搜索区间内 浪费
+            }
+            else
+            {
+                R=mid;
+            }
+        }
+        return ans;
+    }
+};
+```
+
+#### ②牛顿迭代（本菜根本不会，不做解释了）
+
+```c++
+class Solution {
+public:
+    int mySqrt(int x) {
+            if(x==0||x==1)
+        return x;
+    double x0=x;
+    double t=x;
+    x0=x0/2+t/(2*x0);
+    while(fabs(x0*x0-t)>0.00001)
+    {
+        x0=x0/2+t/(2*x0);
+    }
+    cout<<x0<<endl;
+    return int(x0);
+    }
+};
+```
+
+#### ③库函数
+
+```c++
+class Solution {
+public:
+    #include<math>
+    int mySqrt(int x) {
+        return sqrt(x);
+    }
+};
+```
+
+
+
+---
+
+## 结语
+
+使用`库函数`直接可以求解，但是`二分法`才是本题的知识点。
+
+然而`牛顿迭代`我就完全不知道那是啥玩意儿了。（数学老师请原谅我）
+
+------
+
+## 补充：
+
+看了一些大神的代码 发现前面都会加上这一串神奇的东西。
+
+```c++
+static int x=[](){
+    std::ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    return 0;
+}();
+```
+
+提交后Runtime和Memory都有显著的下降
+
+| Code   | Runtime | Memory  |
+| ------ | :-----: | :-----: |
+| Before |  12 ms  | 13.9 MB |
+| After  |  8 ms   | 8.3 MB  |
+
+原因如下：C++的运行速度不如C的，那么主要的原因是C++的输入输出流兼容了C的输入输出，因此，C++的速度才会变慢，如果去掉C++的输入输出的兼容性的话，速度就可C的差不多了，大家可以实验一下。
