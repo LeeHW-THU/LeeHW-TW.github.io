@@ -12,12 +12,12 @@ baseurl: ""                          # for example, '/blog' if your blog hosted 
 future: true
 
 # SNS settings
-RSS: false
+RSS: true
 #weibo_username:     huxpro
 #zhihu_username:     huxpro
 github_username:    LeeHW-TW
 #twitter_username:   huxpro
-facebook_username:  people/%E6%9D%8E%E7%AB%91%E7%B7%AF/100012259057120
+facebook_username:  Lee-HongWei
 #linkedin_username:  firstname-lastname-idxxxx
 
 
@@ -40,6 +40,7 @@ anchorjs: true                          # if you want to customize anchor. check
 # `$ gem install jekyll-paginate`
 plugins: [jekyll-paginate]
 plugins: [jekyll-sitemap]
+plugins: [jekyll-admin]
 
 
 

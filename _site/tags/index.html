@@ -11,16 +11,16 @@
     <meta name="theme-color" content="#000000">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Archive - 李竑緯的博客 | LeeHW">
+    <meta property="og:title" content="Tags - 李竑緯的博客 | LeeHW">
     
     <meta property="og:type" content="website">
-    <meta property="og:description" content="-----瞎学学,瞎写写-----">
+    <meta property="og:description" content="————看看瞎写了些什么————">
     
     <meta property="og:image" content="http://localhost:4000/img/avatar-hux-ny.jpg">
-    <meta property="og:url" content="http://localhost:4000/archive/">
+    <meta property="og:url" content="http://localhost:4000/tags/">
     <meta property="og:site_name" content="李竑緯的博客 | LeeHW">
     
-    <title>Archive - 李竑緯的博客 | LeeHW</title>
+    <title>Tags - 李竑緯的博客 | LeeHW</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -29,7 +29,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/archive/">
+    <link rel="canonical" href="http://localhost:4000/tags/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -170,96 +170,57 @@
 </script>
 
 
-    <!-- 
-Credits: this page shamelessly borrowed a lot from:
-https://github.com/kitian616/jekyll-TeXt-theme
--->
-<!-- Page Header -->
-
-
-
-
-
-
-
+    <!-- Page Header -->
 <header class="intro-header" style="background-image: url('/img/tag-bg.jpg')">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        <div class="site-heading" id="tag-heading">
-        
-          <h1>Archive</h1>
-          <span class="subheading">-----瞎学学,瞎写写-----</span>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading" id="tag-heading">
+                    <h1>Tags</h1>
+                    <span class="subheading">————看看瞎写了些什么————</span>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </header>
-
 
 <!-- Main Content -->
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			<!-- Tags (as filter) -->
-			<div id='tag_cloud' class="tags tags-sup js-tags">
-				<a class="tag-button--all" data-encode="">
-					Show All
-					<sup>10</sup>
-				</a>
-
+            <!-- 标签云 -->
+			<div id='tag_cloud' class="tags">
 				
-        
+				<a href="#LeetCode_Easy" title="LeetCode_Easy" rel="8">LeetCode_Easy</a>
 				
-				</a>
+				<a href="#Tools" title="Tools" rel="1">Tools</a>
 				
-				<a data-sort="0002"
-					data-encode="LeetCode_Easy"
-					class="tag-button"
-					title="LeetCode_Easy" rel="8">
-					LeetCode_Easy
-					<sup>8</sup>
-				</a>
+				<a href="#LeetCode_数论" title="LeetCode_数论" rel="2">LeetCode_数论</a>
 				
-				<a data-sort="0008"
-					data-encode="LeetCode_%E6%95%B0%E8%AE%BA"
-					class="tag-button"
-					title="LeetCode_数论" rel="2">
-					LeetCode_数论
-					<sup>2</sup>
-				</a>
+				<a href="#LeetCode_Medium" title="LeetCode_Medium" rel="1">LeetCode_Medium</a>
 				
-				<a data-sort="0009"
-					data-encode="LeetCode_%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2"
-					class="tag-button"
-					title="LeetCode_二分搜索" rel="1">
-					LeetCode_二分搜索
-					<sup>1</sup>
-				</a>
-				
-				<a data-sort="0009"
-					data-encode="LeetCode_Medium"
-					class="tag-button"
-					title="LeetCode_Medium" rel="1">
-					LeetCode_Medium
-					<sup>1</sup>
-				</a>
-				
-				<a data-sort="0009"
-					data-encode="Tools"
-					class="tag-button"
-					title="Tools" rel="1">
-					Tools
-					<sup>1</sup>
+				<a href="#LeetCode_二分搜索" title="LeetCode_二分搜索" rel="1">LeetCode_二分搜索</a>
 				
 			</div>
 
-            <!-- Article List -->
-			<div class="mini-post-list js-result d-none"><section>
-				<span class="fa listing-seperator">
-					<span class="tag-text">2019</span>
-				</span><div class="post-preview item" data-tags="LeetCode_Easy,LeetCode_%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2">
+            <!--<blockquote class="tag-comments">
+                标签命名规范：
+                    <li>行业观察、职位、公司优先使用中文</li>
+                    <li>外国产品、术语优先使用英文</li>
+            </blockquote>-->
+
+            <!-- 标签列表 -->
+			<div class="mini-post-list">
+			
+			  	<span class="fa fa-tag listing-seperator" id="LeetCode_Easy">
+                    <span class="tag-text">LeetCode_Easy</span>
+                </span>
+				
+				  <!-- <li class="listing-item">
+				  <time datetime="2019-03-05">2019-03-05</time>
+				  <a href="/2019/03/05/LeetCode_69/" title="「LeetCode」——「69」—— Sqrt(x)">「LeetCode」——「69」—— Sqrt(x)</a>
+				  </li> -->
+				 <div class="post-preview">
 				    <a href="/2019/03/05/LeetCode_69/">
 				        <h2 class="post-title">
                             「LeetCode」——「69」—— Sqrt(x)
@@ -270,22 +231,15 @@ https://github.com/kitian616/jekyll-TeXt-theme
 				        </h3>
 				        
 				    </a>
-					<hr>
+				    <!-- <p class="post-meta">2019-03-05</p> -->
 				</div>
-			<div class="post-preview item" data-tags="LeetCode_Medium,LeetCode_%E6%95%B0%E8%AE%BA">
-				    <a href="/2019/03/04/LeetCode_8/">
-				        <h2 class="post-title">
-                            「LeetCode」——「8」—— String to Integer (atoi)
-				        </h2>
-				        
-				        <h3 class="post-subtitle">
-				             记录打码。 
-				        </h3>
-				        
-				    </a>
-					<hr>
-				</div>
-			<div class="post-preview item" data-tags="LeetCode_Easy,LeetCode_%E6%95%B0%E8%AE%BA">
+				<hr>
+				
+				  <!-- <li class="listing-item">
+				  <time datetime="2019-03-04">2019-03-04</time>
+				  <a href="/2019/03/04/LeetCode_231+326+342/" title="「LeetCode」——「231+326+342」—— Power of Two?Three?Four?">「LeetCode」——「231+326+342」—— Power of Two?Three?Four?</a>
+				  </li> -->
+				 <div class="post-preview">
 				    <a href="/2019/03/04/LeetCode_231+326+342/">
 				        <h2 class="post-title">
                             「LeetCode」——「231+326+342」—— Power of Two?Three?Four?
@@ -296,22 +250,15 @@ https://github.com/kitian616/jekyll-TeXt-theme
 				        </h3>
 				        
 				    </a>
-					<hr>
+				    <!-- <p class="post-meta">2019-03-04</p> -->
 				</div>
-			<div class="post-preview item" data-tags="Tools">
-				    <a href="/2019/02/27/Tools/">
-				        <h2 class="post-title">
-                            介绍一下打码环境——Vscode + LeetCode（plugin）
-				        </h2>
-				        
-				        <h3 class="post-subtitle">
-				             记录打码。 
-				        </h3>
-				        
-				    </a>
-					<hr>
-				</div>
-			<div class="post-preview item" data-tags="LeetCode_Easy">
+				<hr>
+				
+				  <!-- <li class="listing-item">
+				  <time datetime="2019-02-27">2019-02-27</time>
+				  <a href="/2019/02/27/LeetCode_20/" title="「LeetCode」——「20」—— Valid Parentheses">「LeetCode」——「20」—— Valid Parentheses</a>
+				  </li> -->
+				 <div class="post-preview">
 				    <a href="/2019/02/27/LeetCode_20/">
 				        <h2 class="post-title">
                             「LeetCode」——「20」—— Valid Parentheses
@@ -322,9 +269,15 @@ https://github.com/kitian616/jekyll-TeXt-theme
 				        </h3>
 				        
 				    </a>
-					<hr>
+				    <!-- <p class="post-meta">2019-02-27</p> -->
 				</div>
-			<div class="post-preview item" data-tags="LeetCode_Easy">
+				<hr>
+				
+				  <!-- <li class="listing-item">
+				  <time datetime="2019-02-15">2019-02-15</time>
+				  <a href="/2019/02/15/LeetCode_14/" title="「LeetCode」——「14」—— Longest Common Prefix">「LeetCode」——「14」—— Longest Common Prefix</a>
+				  </li> -->
+				 <div class="post-preview">
 				    <a href="/2019/02/15/LeetCode_14/">
 				        <h2 class="post-title">
                             「LeetCode」——「14」—— Longest Common Prefix
@@ -335,9 +288,15 @@ https://github.com/kitian616/jekyll-TeXt-theme
 				        </h3>
 				        
 				    </a>
-					<hr>
+				    <!-- <p class="post-meta">2019-02-15</p> -->
 				</div>
-			<div class="post-preview item" data-tags="LeetCode_Easy">
+				<hr>
+				
+				  <!-- <li class="listing-item">
+				  <time datetime="2019-02-12">2019-02-12</time>
+				  <a href="/2019/02/12/LeetCode_13/" title="「LeetCode」——「13」—— Roman to Integer">「LeetCode」——「13」—— Roman to Integer</a>
+				  </li> -->
+				 <div class="post-preview">
 				    <a href="/2019/02/12/LeetCode_13/">
 				        <h2 class="post-title">
                             「LeetCode」——「13」—— Roman to Integer
@@ -348,9 +307,15 @@ https://github.com/kitian616/jekyll-TeXt-theme
 				        </h3>
 				        
 				    </a>
-					<hr>
+				    <!-- <p class="post-meta">2019-02-12</p> -->
 				</div>
-			<div class="post-preview item" data-tags="LeetCode_Easy">
+				<hr>
+				
+				  <!-- <li class="listing-item">
+				  <time datetime="2019-02-11">2019-02-11</time>
+				  <a href="/2019/02/11/LeetCode_9/" title="「LeetCode」——「9」—— Palindrome Number">「LeetCode」——「9」—— Palindrome Number</a>
+				  </li> -->
+				 <div class="post-preview">
 				    <a href="/2019/02/11/LeetCode_9/">
 				        <h2 class="post-title">
                             「LeetCode」——「9」—— Palindrome Number
@@ -361,9 +326,15 @@ https://github.com/kitian616/jekyll-TeXt-theme
 				        </h3>
 				        
 				    </a>
-					<hr>
+				    <!-- <p class="post-meta">2019-02-11</p> -->
 				</div>
-			<div class="post-preview item" data-tags="LeetCode_Easy">
+				<hr>
+				
+				  <!-- <li class="listing-item">
+				  <time datetime="2019-02-10">2019-02-10</time>
+				  <a href="/2019/02/10/LeetCode_7/" title="「LeetCode」——「7」—— Reverse Integer">「LeetCode」——「7」—— Reverse Integer</a>
+				  </li> -->
+				 <div class="post-preview">
 				    <a href="/2019/02/10/LeetCode_7/">
 				        <h2 class="post-title">
                             「LeetCode」——「7」—— Reverse Integer
@@ -374,9 +345,15 @@ https://github.com/kitian616/jekyll-TeXt-theme
 				        </h3>
 				        
 				    </a>
-					<hr>
+				    <!-- <p class="post-meta">2019-02-10</p> -->
 				</div>
-			<div class="post-preview item" data-tags="LeetCode_Easy">
+				<hr>
+				
+				  <!-- <li class="listing-item">
+				  <time datetime="2019-02-09">2019-02-09</time>
+				  <a href="/2019/02/09/LeetCode_1/" title="「LeetCode」——「1」——Two Sum">「LeetCode」——「1」——Two Sum</a>
+				  </li> -->
+				 <div class="post-preview">
 				    <a href="/2019/02/09/LeetCode_1/">
 				        <h2 class="post-title">
                             「LeetCode」——「1」——Two Sum
@@ -387,9 +364,128 @@ https://github.com/kitian616/jekyll-TeXt-theme
 				        </h3>
 				        
 				    </a>
-					<hr>
+				    <!-- <p class="post-meta">2019-02-09</p> -->
 				</div>
+				<hr>
+				
 			
+			  	<span class="fa fa-tag listing-seperator" id="Tools">
+                    <span class="tag-text">Tools</span>
+                </span>
+				
+				  <!-- <li class="listing-item">
+				  <time datetime="2019-02-27">2019-02-27</time>
+				  <a href="/2019/02/27/Tools/" title="介绍一下打码环境——Vscode + LeetCode（plugin）">介绍一下打码环境——Vscode + LeetCode（plugin）</a>
+				  </li> -->
+				 <div class="post-preview">
+				    <a href="/2019/02/27/Tools/">
+				        <h2 class="post-title">
+                            介绍一下打码环境——Vscode + LeetCode（plugin）
+				        </h2>
+				        
+				        <h3 class="post-subtitle">
+				             记录打码。 
+				        </h3>
+				        
+				    </a>
+				    <!-- <p class="post-meta">2019-02-27</p> -->
+				</div>
+				<hr>
+				
+			
+			  	<span class="fa fa-tag listing-seperator" id="LeetCode_数论">
+                    <span class="tag-text">LeetCode_数论</span>
+                </span>
+				
+				  <!-- <li class="listing-item">
+				  <time datetime="2019-03-04">2019-03-04</time>
+				  <a href="/2019/03/04/LeetCode_8/" title="「LeetCode」——「8」—— String to Integer (atoi)">「LeetCode」——「8」—— String to Integer (atoi)</a>
+				  </li> -->
+				 <div class="post-preview">
+				    <a href="/2019/03/04/LeetCode_8/">
+				        <h2 class="post-title">
+                            「LeetCode」——「8」—— String to Integer (atoi)
+				        </h2>
+				        
+				        <h3 class="post-subtitle">
+				             记录打码。 
+				        </h3>
+				        
+				    </a>
+				    <!-- <p class="post-meta">2019-03-04</p> -->
+				</div>
+				<hr>
+				
+				  <!-- <li class="listing-item">
+				  <time datetime="2019-03-04">2019-03-04</time>
+				  <a href="/2019/03/04/LeetCode_231+326+342/" title="「LeetCode」——「231+326+342」—— Power of Two?Three?Four?">「LeetCode」——「231+326+342」—— Power of Two?Three?Four?</a>
+				  </li> -->
+				 <div class="post-preview">
+				    <a href="/2019/03/04/LeetCode_231+326+342/">
+				        <h2 class="post-title">
+                            「LeetCode」——「231+326+342」—— Power of Two?Three?Four?
+				        </h2>
+				        
+				        <h3 class="post-subtitle">
+				             记录打码。 
+				        </h3>
+				        
+				    </a>
+				    <!-- <p class="post-meta">2019-03-04</p> -->
+				</div>
+				<hr>
+				
+			
+			  	<span class="fa fa-tag listing-seperator" id="LeetCode_Medium">
+                    <span class="tag-text">LeetCode_Medium</span>
+                </span>
+				
+				  <!-- <li class="listing-item">
+				  <time datetime="2019-03-04">2019-03-04</time>
+				  <a href="/2019/03/04/LeetCode_8/" title="「LeetCode」——「8」—— String to Integer (atoi)">「LeetCode」——「8」—— String to Integer (atoi)</a>
+				  </li> -->
+				 <div class="post-preview">
+				    <a href="/2019/03/04/LeetCode_8/">
+				        <h2 class="post-title">
+                            「LeetCode」——「8」—— String to Integer (atoi)
+				        </h2>
+				        
+				        <h3 class="post-subtitle">
+				             记录打码。 
+				        </h3>
+				        
+				    </a>
+				    <!-- <p class="post-meta">2019-03-04</p> -->
+				</div>
+				<hr>
+				
+			
+			  	<span class="fa fa-tag listing-seperator" id="LeetCode_二分搜索">
+                    <span class="tag-text">LeetCode_二分搜索</span>
+                </span>
+				
+				  <!-- <li class="listing-item">
+				  <time datetime="2019-03-05">2019-03-05</time>
+				  <a href="/2019/03/05/LeetCode_69/" title="「LeetCode」——「69」—— Sqrt(x)">「LeetCode」——「69」—— Sqrt(x)</a>
+				  </li> -->
+				 <div class="post-preview">
+				    <a href="/2019/03/05/LeetCode_69/">
+				        <h2 class="post-title">
+                            「LeetCode」——「69」—— Sqrt(x)
+				        </h2>
+				        
+				        <h3 class="post-subtitle">
+				             记录打码。 
+				        </h3>
+				        
+				    </a>
+				    <!-- <p class="post-meta">2019-03-05</p> -->
+				</div>
+				<hr>
+				
+			
+			</div>
+
 		</div>
 	</div>
 </div>
@@ -513,18 +609,6 @@ https://github.com/kitian616/jekyll-TeXt-theme
 
 
 
-
-<!-- jquery.tagcloud.js -->
-<script>
-    async('/js/jquery.tagcloud.js',function(){
-        $.fn.tagcloud.defaults = {
-            //size: {start: 1, end: 1, unit: 'em'},
-            color: {start: '#bbbbee', end: '#2f93b4'},
-        };
-        $('#tag_cloud a').tagcloud();
-    })
-</script>
-<script src='/js/archive.js '></script>
 
 
 <!--fastClick.js -->

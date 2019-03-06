@@ -11,14 +11,14 @@
     <meta name="theme-color" content="#000000">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="「LeetCode」——「1」——Two Sum - 李竑緯的博客 | LeeHW">
+    <meta property="og:title" content="「LeetCode」——「231+326+342」—— Power of Two?Three?Four? - 李竑緯的博客 | LeeHW">
     
     <meta property="og:type" content="article">
     <meta property="og:description" content="题目
 
 ">
     
-    <meta property="article:published_time" content="2019-02-09T00:00:00Z">
+    <meta property="article:published_time" content="2019-03-04T00:00:00Z">
     
     
     <meta property="article:author" content="LeeHW">
@@ -26,12 +26,14 @@
     
     <meta property="article:tag" content="LeetCode_Easy">
     
+    <meta property="article:tag" content="LeetCode_数论">
+    
     
     <meta property="og:image" content="http://localhost:4000/img/avatar-hux-ny.jpg">
-    <meta property="og:url" content="http://localhost:4000/2019/02/09/LeetCode_1/">
+    <meta property="og:url" content="http://localhost:4000/2019/03/04/LeetCode_231+326+342/">
     <meta property="og:site_name" content="李竑緯的博客 | LeeHW">
     
-    <title>「LeetCode」——「1」——Two Sum - 李竑緯的博客 | LeeHW</title>
+    <title>「LeetCode」——「231+326+342」—— Power of Two?Three?Four? - 李竑緯的博客 | LeeHW</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -40,7 +42,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/2019/02/09/LeetCode_1/">
+    <link rel="canonical" href="http://localhost:4000/2019/03/04/LeetCode_231+326+342/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -216,13 +218,15 @@
                         
                         <a class="tag" href="/tags/#LeetCode_Easy" title="LeetCode_Easy">LeetCode_Easy</a>
                         
+                        <a class="tag" href="/tags/#LeetCode_数论" title="LeetCode_数论">LeetCode_数论</a>
+                        
                     </div>
-                    <h1>「LeetCode」——「1」——Two Sum</h1>
+                    <h1>「LeetCode」——「231+326+342」—— Power of Two?Three?Four?</h1>
                     
                     
                     <h2 class="subheading"> 记录打码。 </h2>
                     
-                    <span class="meta">Posted by LeeHW on February 9, 2019</span>
+                    <span class="meta">Posted by LeeHW on March 4, 2019</span>
                 </div>
             </div>
         </div>
@@ -244,28 +248,9 @@
 
 				<h2 id="题目">题目</h2>
 
-<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
-
-<p>You may assume that each input would have exactly one solution, and you may</p>
-
-<p>not use the same element twice.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Given nums = [2, 7, 11, 15], target = 9</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Because nums[0] + nums[1] = 2 + 7 = 9,</p>
-
-<p>return [0, 1].</p>
+<ul>
+  <li>Given an integer, write a function to determine if it is a power of Two?Three?Four?</li>
+</ul>
 
 <hr />
 
@@ -287,26 +272,20 @@
 14
 15
 16
-17
-18
-19
 </pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">twoSum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">flag</span><span class="p">;</span>
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="k">if</span><span class="p">((</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">==</span><span class="n">target</span><span class="p">)</span>
-                <span class="p">{</span>
-                    <span class="n">flag</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-                    <span class="n">flag</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">j</span><span class="p">);</span>
-                <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">isPowerOfTwo</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="kt">long</span> <span class="kt">long</span> <span class="n">res</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">){</span>
+            <span class="k">while</span><span class="p">(</span><span class="n">res</span><span class="o">&lt;</span><span class="n">num</span><span class="p">){</span>
+                <span class="c1">// 2? 3? 4? 同类型</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">res</span><span class="o">&lt;</span><span class="n">num</span><span class="p">)</span> <span class="n">res</span><span class="o">=</span><span class="n">res</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">res</span><span class="o">&gt;</span><span class="n">num</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
             <span class="p">}</span>
-            
         <span class="p">}</span>
-        <span class="k">return</span> <span class="n">flag</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">};</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
@@ -315,8 +294,156 @@
 
 <h2 id="结语">结语</h2>
 
-<p>暴力2层循环当然效率垃圾啦。。</p>
+<p>​	直接采取比较暴力的方法，对res=1循环与幂相乘，如果最后res=num 那就说明num是题目的幂级数。（不建议采取此方法）</p>
 
+<hr />
+
+<h2 id="补充判断2的幂级数">补充：判断2的幂级数</h2>
+
+<p>​	若是求2的幂级数，巧妙运用数学知识可发现规律：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">十进制</th>
+      <th style="text-align: center">二进制</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">100</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">8</td>
+      <td style="text-align: center">1000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">16</td>
+      <td style="text-align: center">10000</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>使用了比较酷炫的写法：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">bool</span> <span class="n">isPowerOfTwo</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="k">return</span> <span class="p">((</span><span class="n">n</span><span class="o">&amp;</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">==</span><span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>n&amp;(n-1))==0</strong> 并运算 保证结果为 1（0）*</p>
+
+<hr />
+
+<h2 id="补充判断4的幂级数">补充：判断4的幂级数</h2>
+
+<p>由2的幂级数进行扩展思考：</p>
+
+<p>​	2、8		false（过滤）；    2=10      8=1000</p>
+
+<p>​	4、16		true（保留） ；    4=100    16=10000</p>
+
+<p>所以只要确保0的个数为<strong>偶数</strong>即可。</p>
+
+<p>依旧很酷炫的代码如下：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">bool</span> <span class="n">isPowerOfTwo</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="k">return</span> <span class="p">((</span><span class="n">n</span><span class="o">&amp;</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">==</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">n</span><span class="o">&amp;</span><span class="mh">0x55555555</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>0x55555555 = 1010101010101010101010101010101 (偶数位为0，奇数位为1）</p>
+
+<p>例：</p>
+
+<p>​	0101 &amp; 1000 = 0000</p>
+
+<p>​	0101 &amp; 0100 = 0100</p>
+
+<p>即 过滤掉了奇数个0的情况。</p>
+
+<hr />
+
+<h2 id="补充判断3的幂级数">补充：判断3的幂级数</h2>
+
+<p>例： 3 9 27 81</p>
+
+<p>设 big3=3^k  即 k=log3（maxint）</p>
+
+<p>把题目转化为 求：<strong>在int范围内 最大3的幂级数</strong></p>
+
+<p>只要满足big3%n==0 <strong>即n为3的幂级数</strong></p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">bool</span> <span class="n">isPowerOfThree</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="k">const</span> <span class="kt">int</span> <span class="n">maxint</span><span class="o">=</span><span class="mh">0x7fffffff</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="n">log</span><span class="p">(</span><span class="n">maxint</span><span class="p">)</span><span class="o">/</span><span class="n">log</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="c1">//换底 log3</span>
+        <span class="kt">int</span> <span class="n">big3</span><span class="o">=</span><span class="n">pow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">k</span><span class="p">);</span><span class="c1">//求出在int范围内 最大3的幂级数</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">big3</span><span class="o">%</span><span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>注意：此方法只对素数的幂级数有用</strong></p>
+
+<hr />
+
+<h2 id="补充进制的特殊形式">补充：进制的特殊形式</h2>
+
+<p>0xaaaaaaaa = 101010101010101010101010101010 (偶数位为1，奇数位为0）</p>
+
+<p>0x55555555 = 1010101010101010101010101010101 (偶数位为0，奇数位为1）</p>
+
+<p>0x33333333 = 110011001100110011001100110011 (1和0每隔两位交替出现)</p>
+
+<p>0xcccccccc = 11001100110011001100110011001100 (0和1每隔两位交替出现)</p>
+
+<p>0x0f0f0f0f = 00001111000011110000111100001111 (1和0每隔四位交替出现)</p>
+
+<p>0xf0f0f0f0 = 11110000111100001111000011110000 (0和1每隔四位交替出现)</p>
 
                             <!-- 打赏功能 -->
             <div>
@@ -351,11 +478,18 @@
                 <hr style="visibility: hidden;">
                 <ul class="pager">
                     
+                    <li class="previous">
+                        <a href="/2019/02/27/Tools/" data-toggle="tooltip" data-placement="top" title="介绍一下打码环境——Vscode + LeetCode（plugin）">
+                        Previous<br>
+                        <span>介绍一下打码环境——Vscode + LeetCode（plugin）</span>
+                        </a>
+                    </li>
+                    
                     
                     <li class="next">
-                        <a href="/2019/02/10/LeetCode_7/" data-toggle="tooltip" data-placement="top" title="「LeetCode」——「7」—— Reverse Integer">
+                        <a href="/2019/03/04/LeetCode_8/" data-toggle="tooltip" data-placement="top" title="「LeetCode」——「8」—— String to Integer (atoi)">
                         Next<br>
-                        <span>「LeetCode」——「7」—— Reverse Integer</span>
+                        <span>「LeetCode」——「8」—— String to Integer (atoi)</span>
                         </a>
                     </li>
                     

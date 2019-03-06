@@ -11,27 +11,27 @@
     <meta name="theme-color" content="#000000">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="「LeetCode」——「1」——Two Sum - 李竑緯的博客 | LeeHW">
+    <meta property="og:title" content="介绍一下打码环境——Vscode + LeetCode（plugin） - 李竑緯的博客 | LeeHW">
     
     <meta property="og:type" content="article">
-    <meta property="og:description" content="题目
+    <meta property="og:description" content="Environment
 
 ">
     
-    <meta property="article:published_time" content="2019-02-09T00:00:00Z">
+    <meta property="article:published_time" content="2019-02-27T00:00:00Z">
     
     
     <meta property="article:author" content="LeeHW">
     
     
-    <meta property="article:tag" content="LeetCode_Easy">
+    <meta property="article:tag" content="Tools">
     
     
     <meta property="og:image" content="http://localhost:4000/img/avatar-hux-ny.jpg">
-    <meta property="og:url" content="http://localhost:4000/2019/02/09/LeetCode_1/">
+    <meta property="og:url" content="http://localhost:4000/2019/02/27/Tools/">
     <meta property="og:site_name" content="李竑緯的博客 | LeeHW">
     
-    <title>「LeetCode」——「1」——Two Sum - 李竑緯的博客 | LeeHW</title>
+    <title>介绍一下打码环境——Vscode + LeetCode（plugin） - 李竑緯的博客 | LeeHW</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -40,7 +40,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/2019/02/09/LeetCode_1/">
+    <link rel="canonical" href="http://localhost:4000/2019/02/27/Tools/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -214,15 +214,15 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#LeetCode_Easy" title="LeetCode_Easy">LeetCode_Easy</a>
+                        <a class="tag" href="/tags/#Tools" title="Tools">Tools</a>
                         
                     </div>
-                    <h1>「LeetCode」——「1」——Two Sum</h1>
+                    <h1>介绍一下打码环境——Vscode + LeetCode（plugin）</h1>
                     
                     
                     <h2 class="subheading"> 记录打码。 </h2>
                     
-                    <span class="meta">Posted by LeeHW on February 9, 2019</span>
+                    <span class="meta">Posted by LeeHW on February 27, 2019</span>
                 </div>
             </div>
         </div>
@@ -242,81 +242,177 @@
                 <!-- Multi-Lingual -->
                 
 
-				<h2 id="题目">题目</h2>
+				<h2 id="environment">Environment</h2>
 
-<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+<p>hardware：MacBook pro</p>
 
-<p>You may assume that each input would have exactly one solution, and you may</p>
+<p>software：Visual Studio Code</p>
 
-<p>not use the same element twice.</p>
+<p>plugin：Leetcode</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Given nums = [2, 7, 11, 15], target = 9</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Because nums[0] + nums[1] = 2 + 7 = 9,</p>
-
-<p>return [0, 1].</p>
+<p><img src="http://lihongwei.site/img/tools_1.png" alt="tools_1" /></p>
 
 <hr />
 
-<h2 id="代码">代码</h2>
+<h1 id="leetcode">LeetCode</h1>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">twoSum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">flag</span><span class="p">;</span>
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="k">if</span><span class="p">((</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">==</span><span class="n">target</span><span class="p">)</span>
-                <span class="p">{</span>
-                    <span class="n">flag</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-                    <span class="n">flag</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">j</span><span class="p">);</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-            
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">flag</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
+<blockquote>
+  <p>在 VS Code 中练习 LeetCode</p>
+</blockquote>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jdneo/vscode-leetcode/master/resources/LeetCode.png" alt="" />
+</p>
+<p align="center">
+  <a href="https://travis-ci.org/jdneo/vscode-leetcode">
+    <img src="https://img.shields.io/travis/jdneo/vscode-leetcode.svg?style=flat-square" alt="" />
+  </a>
+  <a href="https://gitter.im/vscode-leetcode/Lobby">
+    <img src="https://img.shields.io/gitter/room/jdneo/vscode-leetcode.svg?style=flat-square" alt="" />
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=shengchen.vscode-leetcode">
+    <img src="https://img.shields.io/visual-studio-marketplace/d/shengchen.vscode-leetcode.svg?style=flat-square" alt="" />
+  </a>
+  <a href="https://github.com/jdneo/vscode-leetcode/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/jdneo/vscode-leetcode.svg?style=flat-square" alt="" />
+  </a>
+</p>
+
+<ul>
+  <li><a href="#Requirements">English Document</a></li>
+  <li><a href="https://github.com/jdneo/vscode-leetcode/blob/master/docs/README_zh-CN.md">中文文档</a></li>
+</ul>
+
+<h2 id="运行条件">运行条件</h2>
+<ul>
+  <li><a href="https://code.visualstudio.com/">VS Code 1.23.0+</a></li>
+  <li>
+    <p><a href="https://nodejs.org">Node.js 8+</a></p>
+
+    <blockquote>
+      <p>注意：请确保<code class="highlighter-rouge">Node</code>在<code class="highlighter-rouge">PATH</code>环境变量中，您可以通过执行：<code class="highlighter-rouge">node -v</code>进行查看。</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h2 id="快速开始">快速开始</h2>
+
+<p><img src="https://raw.githubusercontent.com/jdneo/vscode-leetcode/master/docs/gifs/demo.gif" alt="demo" /></p>
+
+<h2 id="功能">功能</h2>
+
+<h3 id="登入登出">登入登出</h3>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jdneo/vscode-leetcode/master/docs/imgs/sign_in.png" alt="登入登出" />
+</p>
+
+<ul>
+  <li>
+    <p>点击 <code class="highlighter-rouge">LeetCode Explorer</code> 中的 <code class="highlighter-rouge">Sign in to LeetCode</code> 即可登入。</p>
+  </li>
+  <li>
+    <p>你也可以使用下来命令登入或登出:</p>
+    <ul>
+      <li><strong>LeetCode: Sign in</strong></li>
+      <li><strong>LeetCode: Sign out</strong></li>
+    </ul>
+  </li>
+</ul>
 
 <hr />
 
-<h2 id="结语">结语</h2>
+<h3 id="切换-leetcode-版本">切换 LeetCode 版本</h3>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jdneo/vscode-leetcode/master/docs/imgs/endpoint.png" alt="切换 LeetCode 版本" />
+</p>
 
-<p>暴力2层循环当然效率垃圾啦。。</p>
+<ul>
+  <li>
+    <p>LeetCode 目前有<strong>英文版</strong>和<strong>中文版</strong>两种版本。点击 <code class="highlighter-rouge">LeetCode Explorer</code> 导航栏中的 <img src="https://raw.githubusercontent.com/jdneo/vscode-leetcode/master/docs/imgs/btn_endpoint.png" alt="btn_endpoint" /> 按钮可切换版本。</p>
+  </li>
+  <li>
+    <p>目前可切换的版本有:</p>
+    <ul>
+      <li><strong>leetcode.com</strong></li>
+      <li><strong>leetcode-cn.com</strong></li>
+    </ul>
 
+    <blockquote>
+      <p>注意：两种版本的 LeetCode 账户并<strong>不通用</strong>，请确保当前激活的版本是正确的。插件默认激活的是<strong>英文版</strong>。</p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="选择题目">选择题目</h3>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jdneo/vscode-leetcode/master/docs/imgs/pick_problem.png" alt="选择题目" />
+</p>
+
+<ul>
+  <li>
+    <p>在 <code class="highlighter-rouge">LeetCode Explorer</code> 中<strong>右键</strong>题目并选择 <code class="highlighter-rouge">Show Problem</code> 进行答题。</p>
+
+    <blockquote>
+      <p>注意：若当前 VS Code 没有已打开的文件夹，则生成的题目文件会存储于 <strong>$HOME/.leetcode/</strong> 目录下。</p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="提交答案">提交答案</h3>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jdneo/vscode-leetcode/master/docs/imgs/submit.png" alt="提交答案" />
+</p>
+
+<ul>
+  <li>通过点击文件最下方的 <code class="highlighter-rouge">🙏 Submit to LeetCode</code> 可提交答案。 你也可以触发 <strong>LeetCode: Submit to LeetCode</strong> 命令将<strong>当前</strong>文件作为答案进行提交。</li>
+</ul>
+
+<hr />
+
+<h3 id="测试答案">测试答案</h3>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jdneo/vscode-leetcode/master/docs/imgs/test.png" alt="测试答案" />
+</p>
+
+<ul>
+  <li>
+    <p>在编辑区内右键并选择 <code class="highlighter-rouge">Test in LeetCode</code>，可对<strong>当前</strong>答案进行测试。</p>
+  </li>
+  <li>
+    <p>有下列三种测试集来源：</p>
+    <ul>
+      <li><strong>默认测试集</strong>：Test with the default cases</li>
+      <li><strong>在输入框内输入测试集</strong>：Write test cases in input box</li>
+      <li><strong>提供自定义测试集文件</strong>：Test with the written cases in file</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="通过关键字搜索题目">通过关键字搜索题目</h3>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jdneo/vscode-leetcode/master/docs/imgs/search.png" alt="通过关键字搜索题目" />
+</p>
+
+<ul>
+  <li>点击 <code class="highlighter-rouge">LeetCode Explorer</code> 导航栏中的 <img src="https://raw.githubusercontent.com/jdneo/vscode-leetcode/master/docs/imgs/btn_search.png" alt="btn_search" /> 按钮可按照关键字搜索题目。</li>
+</ul>
+
+<hr />
+
+<h3 id="管理存档">管理存档</h3>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jdneo/vscode-leetcode/master/docs/imgs/session.png" alt="管理存档" />
+</p>
+
+<ul>
+  <li>点击位于 VS Code 底部状态栏的 <code class="highlighter-rouge">LeetCode: ***</code> 管理 <code class="highlighter-rouge">LeetCode 存档</code>。你可以<strong>切换</strong>存档或者<strong>创建</strong>新的存档。</li>
+</ul>
 
                             <!-- 打赏功能 -->
             <div>
@@ -351,11 +447,18 @@
                 <hr style="visibility: hidden;">
                 <ul class="pager">
                     
+                    <li class="previous">
+                        <a href="/2019/02/27/LeetCode_20/" data-toggle="tooltip" data-placement="top" title="「LeetCode」——「20」—— Valid Parentheses">
+                        Previous<br>
+                        <span>「LeetCode」——「20」—— Valid Parentheses</span>
+                        </a>
+                    </li>
+                    
                     
                     <li class="next">
-                        <a href="/2019/02/10/LeetCode_7/" data-toggle="tooltip" data-placement="top" title="「LeetCode」——「7」—— Reverse Integer">
+                        <a href="/2019/03/04/LeetCode_231+326+342/" data-toggle="tooltip" data-placement="top" title="「LeetCode」——「231+326+342」—— Power of Two?Three?Four?">
                         Next<br>
-                        <span>「LeetCode」——「7」—— Reverse Integer</span>
+                        <span>「LeetCode」——「231+326+342」—— Power of Two?Three?Four?</span>
                         </a>
                     </li>
                     
