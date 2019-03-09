@@ -375,13 +375,15 @@ M             1000
 
 <h4 id="需要引入的头文件不同">需要引入的头文件不同</h4>
 
-<p>map: 			#include &lt; map &gt;
-unordered_map:     #include &lt; unordered_map &gt;</p>
+<p>​	map: <code class="highlighter-rouge">#include &lt; map &gt;</code></p>
+
+<p>​	unordered_map:<code class="highlighter-rouge">#include &lt; unordered_map &gt;</code></p>
 
 <h4 id="内部实现机理不同">内部实现机理不同</h4>
 
-<p><strong>map：</strong> map内部实现了一个红黑树（红黑树是非严格平衡二叉搜索树，而AVL是严格平衡二叉搜索树），红黑树具有自动排序的功能，因此map内部的所有元素都是有序的，红黑树的每一个节点都代表着map的一个元素。因此，对于map进行的查找，删除，添加等一系列的操作都相当于是对红黑树进行的操作。map中的元素是按照二叉搜索树（又名二叉查找树、二叉排序树，特点就是左子树上所有节点的键值都小于根节点的键值，右子树所有节点的键值都大于根节点的键值）存储的，使用中序遍历可将键值按照从小到大遍历出来。
-**unordered_map: **unordered_map内部实现了一个哈希表（也叫散列表，通过把关键码值映射到Hash表中一个位置来访问记录，查找的时间复杂度可达到O(1)，其在海量数据处理中有着广泛应用）。因此，其元素的排列顺序是无序的。哈希表详细介绍</p>
+<p><code class="highlighter-rouge">map:</code> map内部实现了一个红黑树（红黑树是非严格平衡二叉搜索树，而AVL是严格平衡二叉搜索树），红黑树具有自动排序的功能，因此map内部的所有元素都是有序的，红黑树的每一个节点都代表着map的一个元素。因此，对于map进行的查找，删除，添加等一系列的操作都相当于是对红黑树进行的操作。map中的元素是按照二叉搜索树（又名二叉查找树、二叉排序树，特点就是左子树上所有节点的键值都小于根节点的键值，右子树所有节点的键值都大于根节点的键值）存储的，使用中序遍历可将键值按照从小到大遍历出来。</p>
+
+<p><code class="highlighter-rouge">unordered_map</code>: unordered_map内部实现了一个哈希表（也叫散列表，通过把关键码值映射到Hash表中一个位置来访问记录，查找的时间复杂度可达到O(1)，其在海量数据处理中有着广泛应用）。因此，其元素的排列顺序是无序的。哈希表详细介绍</p>
 
 <h4 id="优缺点以及适用处">优缺点以及适用处</h4>
 
@@ -542,27 +544,37 @@ gitalk.render('gitalk-container')
         </a>
         
         
-                <a data-sort="0002" 
+                <a data-sort="0003" 
                     href="/archive/?tag=LeetCode_Easy"
                     title="LeetCode_Easy"
-                    rel="8">LeetCode_Easy</a>
+                    rel="11">LeetCode_Easy</a>
         
-                <a data-sort="0008" 
+                <a data-sort="0012" 
                     href="/archive/?tag=LeetCode_%E6%95%B0%E8%AE%BA"
                     title="LeetCode_数论"
                     rel="2">LeetCode_数论</a>
         
-                <a data-sort="0009" 
+                <a data-sort="0013" 
+                    href="/archive/?tag=C%2B%2B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"
+                    title="C++基础知识"
+                    rel="1">C++基础知识</a>
+        
+                <a data-sort="0013" 
                     href="/archive/?tag=LeetCode_%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2"
                     title="LeetCode_二分搜索"
                     rel="1">LeetCode_二分搜索</a>
         
-                <a data-sort="0009" 
+                <a data-sort="0013" 
+                    href="/archive/?tag=LeetCode_%E9%80%92%E5%BD%92"
+                    title="LeetCode_递归"
+                    rel="1">LeetCode_递归</a>
+        
+                <a data-sort="0013" 
                     href="/archive/?tag=LeetCode_Medium"
                     title="LeetCode_Medium"
                     rel="1">LeetCode_Medium</a>
         
-                <a data-sort="0009" 
+                <a data-sort="0013" 
                     href="/archive/?tag=Tools"
                     title="Tools"
                     rel="1">Tools
@@ -635,6 +647,15 @@ gitalk.render('gitalk-container')
 <ul class="list-inline text-center">
 
 
+  
+  <li>
+    <a href="/feed.xml">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
   
   
   
