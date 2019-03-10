@@ -12,16 +12,27 @@
     <meta name="theme-color" content="#000000">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="About - 李竑緯的博客 | LeeHW">
+    <meta property="og:title" content="「LeetCode」——「26」—— Remove Duplicates from Sorted Array - 李竑緯的博客 | LeeHW">
     
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="-----个人介绍啦-----">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="题目
+
+">
+    
+    <meta property="article:published_time" content="2019-03-10T00:00:00Z">
+    
+    
+    <meta property="article:author" content="LeeHW">
+    
+    
+    <meta property="article:tag" content="LeetCode_Easy">
+    
     
     <meta property="og:image" content="http://localhost:4000/img/avatar-hux-ny.jpg">
-    <meta property="og:url" content="http://localhost:4000/about/">
+    <meta property="og:url" content="http://localhost:4000/2019/03/10/LeetCode_26/">
     <meta property="og:site_name" content="李竑緯的博客 | LeeHW">
     
-    <title>About - 李竑緯的博客 | LeeHW</title>
+    <title>「LeetCode」——「26」—— Remove Duplicates from Sorted Array - 李竑緯的博客 | LeeHW</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -30,7 +41,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/about/">
+    <link rel="canonical" href="http://localhost:4000/2019/03/10/LeetCode_26/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -177,149 +188,250 @@
 </script>
 
 
-    <script type="text/javascript" color="238,205,205" opacity='0.7' zIndex="-2" count="99" src="../../../../js/canvas-nest.min.js"></script>
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/post-bg-digital-native.jpg" width="0" height="0"> -->
 
-<!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/about-bg.jpg')">
+<!-- Post Header -->
+<!-- canvas-nest.min.js -->
+<!--<script type="text/javascript" src="../../../../js/canvas-nest.min.js"></script>-->
+<head>
+    <link href="../../../../css/rouge.css" rel="stylesheet">
+</head>
+<script type="text/javascript" color="238,205,205" opacity='0.7' zIndex="-2" count="99" src="../../../../js/canvas-nest.min.js"></script>
+<!--//添加评论系统-->
+<link rel="stylesheet" href="../../../../css/gitalk.css">
+    <script src="../../../../js/gitalk.min.js"></script>
+<!--    打赏-->
+<link href="/css/reward.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/post-bg-digital-native.jpg')
+    }
+
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>About</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">-----个人介绍啦-----</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#LeetCode_Easy" title="LeetCode_Easy">LeetCode_Easy</a>
+                        
+                    </div>
+                    <h1>「LeetCode」——「26」—— Remove Duplicates from Sorted Array</h1>
+                    
+                    
+                    <h2 class="subheading"> 记录打码。 </h2>
+                    
+                    <span class="meta">Posted by LeeHW on March 10, 2019</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+				<h2 id="题目">题目</h2>
+
+<p>Given a sorted array <em>nums</em>, remove the duplicates <a href="https://en.wikipedia.org/wiki/In-place_algorithm"><strong>in-place</strong></a> such that each element appear only <em>once</em> and return the new length.</p>
+
+<p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array in-place</strong> with O(1) extra memory.</p>
+
+<p><strong>Example 1:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>Given nums = [1,1,2],
+
+Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.
+
+It doesn't matter what you leave beyond the returned length.
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Example 2:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>Given nums = [0,0,1,1,1,2,2,3,3,4],
+
+Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.
+
+It doesn't matter what values are set beyond the returned length.
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+
+<h2 id="代码">代码</h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">removeDuplicates</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+                <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+
+<h2 id="结语">结语</h2>
+
+<p>思路同27题。</p>
+
+<p>跳转：<a href="https://lihongwei.site/2019/03/10/LeetCode_27/">「LeetCode」——「27」—— Remove Element</a></p>
+
+
+                            <!-- 打赏功能 -->
+            <div>
+                <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+                <div>☛兄dei，请我喝杯茶☚</div>
+                <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+                    <span>打赏</span>
+                </button>
+                <div id="QR" style="display: none;">
+                        
+                        
+                <div id="wechat" style="display: inline-block">
+                <img id="wechat_qr" src="/img/payimg/weipayimg.jpg" alt="yizibi 微信支付"/>
+                            <p>微信支付</p>
+                </div>
+                        
+                        
+                        
+                <div id="alipay" style="display: inline-block">
+                <img id="alipay_qr" src="/img/payimg/alipayimg.jpg" alt="yizibi 支付宝"/>
+                <p>支付宝</p>
+                </div>
+                        
+                        
+                        
+                        
+                </div>
+                </div>
+                
+            </div>
+
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2019/03/09/Learn/" data-toggle="tooltip" data-placement="top" title="C++基础知识整理（持续更新）">
+                        Previous<br>
+                        <span>C++基础知识整理（持续更新）</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2019/03/10/LeetCode_27/" data-toggle="tooltip" data-placement="top" title="「LeetCode」——「27」—— Remove Element">
+                        Next<br>
+                        <span>「LeetCode」——「27」—— Remove Element</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <hr style="visibility: hidden;">
+                <!--   gitalk       -->
+
+<div class="comment">
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+var gitalk = new Gitalk({
+    id: '2018-09-26 00:32:24 +0000',
+    clientID: 'db85b5fbb6a63cd38bb5',
+    clientSecret: '9a47030c72d7e1ae99ebebeb84b235f6c836faf1',
+    repo: 'leehw-tw.github.io',
+    owner: 'leehw-tw',
+    admin: ['leehw-tw'], 
+    labels: ['Gitalk'],
+})
+gitalk.render('gitalk-container')
+</script> 
+
+</div>
+
+                
+
+                
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
         
 
-<!-- USE SIDEBAR -->
-    <!-- PostList Container -->
-    		<div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                postlist-container
-            ">
-    			<!-- Language Selector -->
-<select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 Chinese </option>
-    <option value="1"> 英文 English </option>
-</select>
-
-<!-- Chinese Version -->
-<div class="zh post-container">
-    
-    <blockquote>
-  <p>写写代码，做做设计，<br />
-离开世界之前，一切都是过程。</p>
-</blockquote>
-
-<h4 id="基本介绍">基本介绍：</h4>
-
-<p>李竑緯–</p>
-
-<p>​	华南理工大学 软件工程</p>
-
-<p>基本掌握：C++、Java、Python、Unity3D、Linux Shell、DL、ML、CV</p>
-
-<p>其他技能：组装电脑、笔记本维修、Android/IOS刷机、路由器部署/组网/管理</p>
-
-<h4 id="校内实习项目">校内实习项目：</h4>
-
-<p>​	2018 年 3 月起 ：</p>
-
-<h5 id="智慧医疗未来计算架构和视觉理解实验室--华南理工大学指导老师-副研究员-王小航-"><strong>智慧医疗：</strong>未来计算架构和视觉理解实验室 （ 华南理工大学，指导老师 副研究员 王小航 ）</h5>
-
-<p>​		以医学仪器检测人体，得到的图形，通过AI图像识别，比对医疗数据库的信息，判别症状和病情轻重，提供医生作为治疗的参考。</p>
-
-<h5 id="深度强化学习中的迁移学习-华南理工大学指导老师-副教授-陈百基-"><strong>深度强化学习中的迁移学习</strong>：（ 华南理工大学，指导老师 副教授 陈百基 ）</h5>
-
-<p>​               深度强化学习（Deep Reinforcement Learning）是一种重要的机器学习方法， 在智能控制机器人及分析预测有着重要的应用。 2016 年谷歌公司开发的 AlphGo 战胜了人类的围棋冠军， 其主要用到的机器学习方法就是深度强化学习。 但是目前的深度强化学习需要大量样本的支持，这样的直接结果就是需要很长的训练时间才能达到很好的效果。 但在实际生活中，很多领域存在样本量过少丶数据采集困难丶样本时效性强的问题。研究者本项目提出将迁移学习（Transfer Learning）应用在深度强化学习上，着重于用已经训练好的模型去帮助训练新的模型，加速新模型的训练，并且提高模型的训练质量。</p>
-
-<h4 id="竞赛项目">竞赛项目：</h4>
-
-<p>​	微软2017编程之美挑战赛（2017.3~2017.7）</p>
-
-<p>​	名次：全国复赛第九名</p>
-
-<p>​	初赛阶段：初赛的内容是进行问答模型中的问题和答案的匹配。先使用word2vec进行词向量训练，训练后相加求平均得到句向量。然后利用余弦相似度匹配，达到0.54的准确率。</p>
-
-<p>​	复赛阶段：为学校建立一个智能Bot。能进行学校官网信息的问答。由于机器学习模型匹配不精准，最后采用了关键词泛化匹配。</p>
-
-<h4 id="实习经历">实习经历：</h4>
-
-<p>​	<strong>上海云从企业发展有限公司</strong></p>
-
-<p>本次实习参与的项目是”基于深度学习在医疗切片中自动识别病灶位置”. 目标是透过数据训练，得出图像识别系统的训练结果文件，未来能在医疗切片中，自动准确识别出病灶种类，以及标出病灶的位置.</p>
-
-<p>​           <strong>我在项目中负责的部分:</strong></p>
-
-<p>​	① 编写脚本文件, 根据病灶的Xml标注文件，对数百万的图片数据文件进行图形切割操作, 使用Opencv计算背景面积, 超出70%为白色（非病灶）的图片进行舍弃 ( 因为数据有数百万的图片文件, 所以我的 Python编程采取 Linux多线程，在服务器上运用多线程同时处理大量图片 ), 并且根据Xml标注文件给的ROI区域（病灶区） 与非ROI区域, 对图片数据文件名称及目录进行批量处理更改， 方能导入人工智能神经网络系统进行训练。</p>
-
- 	② 编写脚本文件根据需要的文件数目对数据进行随机批量移动, 以能进行先期的测试训练和调整。
-
-<p>​	③ 编写神经网络, 使用整理好的数据进行训练.使用的是Keras, 神经网络，架构是Resnet50 + GlobalAveragePooling2D + Dense + Dense, 得到 .h5的训练结果文件,并且对TensorBoard-log文件进行分析拟合情况.</p>
-
-<p>​	④使用训练结果文件对测试数据进行预测,并且绘制预测结果图.</p>
-
-<p>实习心得:</p>
-
-<p>​	本次实习接触到百万数量级别的数据,操作了</p>
-
-<p>​	（1）考虑运行效率与目标的情况下实现批处理数据.</p>
-
-<p>​	（2）使用Keras编写神经网络</p>
-
-<p>​	（3）了解并实际编写Resnet的网络结构</p>
-
-<p>​	（4）分析训练的拟合情况</p>
-
-<p>​	（5）最后测试训练结果绘制预测图。这些操作都在公司的 Linux + GPU（Titan Xp）x4的服务器上完成训练, 对这已经非常熟练。</p>
-
-<p>本项目初步的预测结果与目标有段距离, 我主动仔细研究分析原因后，发现是因为医院给的数据, 并没有针对单一种类病灶的大量数据, 而是把各种病灶统一看作是异常而没有分类， 并且医院的标注质量只有方框，不是沿着病灶边缘准确标注，这样容易包含了一些正常的区域，所以我们和医院协商后，他们会提供新的一批高质量的数据.</p>
-
-<p>在与医院讨论和等待提供新数据的过程中, 我研究了百度发表的论文<code class="highlighter-rouge">&lt;&lt;Cancer Metastasis Detection With Neural Conditional Random Field&gt;&gt;</code> 并以这个论文的数据和神经网络，编程训练复现了论文中的准确率, 发现此论文适用于检测癌症转移, 是使用NCRF(CNN+CRF) 条件随机场 + Resnet34的结构学习癌症的边缘特征，实现检测癌症转移的目标. 虽然论文中使用的数据与我们所做的项目有部分差异, 但是通过本篇论文，知道了数据应该如何标注才能达到在最好的预期效果，与训练模型的方法，这两者都对我日后所做的项目有帮助. 在这篇论文的基础上，我们项目小组重新定义最佳的标注法，并以此要求医院给我们更高质量的数据, 奠定了项目成功的基础。</p>
-
-</div>
-
-<!-- English Version -->
-<div class="en post-container">
-    
-    
-<blockquote>
-  <p>Yet another man.</p>
-</blockquote>
-
-<p>Hi, I am <em>@LeeHW</em> (Lee, HW), a software engineer &amp; a designer.</p>
-
-
-</div>
-
-
-
-
-    		</div>
     <!-- Sidebar Container -->
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
 
 
 <section>
+    
+        <hr class="hidden-sm hidden-xs">
     
     <h5><a href="/archive/">FEATURED TAGS</a></h5>
     <div class="tags">
@@ -352,68 +464,56 @@
 </section>
 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-  <hr>
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-    
-    <img src="/img/avatar-hux-ny.jpg" />
-    
-    
-    <p>瞎学学，瞎写写 WeChat:1003257462 email:1003257462@qq.com </p>
-    
-    <!-- SNS Link -->
-    
-
-
-<ul class="list-inline">
-
-
-  
-  <li>
-    <a href="/feed.xml">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-  
-  
-  
-  
-  <li>
-    <a target="_blank" href="https://www.facebook.com/people/%E6%9D%8E%E7%AB%91%E7%B7%AF/100012259057120">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-  
-  <li>
-    <a target="_blank" href="https://github.com/LeeHW-TW">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-  
-</ul>
-  </div>
-</section>
-
                 <!-- Friends Blog -->
                 
-    		</div>
-        
-	</div>
-</div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- add support for mathjax by voleking-->
+
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
 
 
 
@@ -603,58 +703,67 @@
 
 <!-- Side Catalog -->
 
+<script type="text/javascript">
+    function generateCatalog (selector) {
+
+        // interop with multilangual 
+        if ('' == 'true') {
+            _containerSelector = 'div.post-container.active'
+        } else {
+            _containerSelector = 'div.post-container'
+        }
+
+        // init
+        var P = $(_containerSelector),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
 
 
 <!-- Multi-Lingual -->
-
-<!-- Handle Language Change -->
-<script type="text/javascript">
-    // get nodes
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    var $select = document.querySelector("select");
-
-    // bind hashchange event
-    // Changes at v1.7.2: change the language flag from hash-basing to in-memory basing
-    // due to its confliction with catalog anchors.
-    // window.addEventListener('hashchange', _render);
-
-    // handle render
-    function _render(_hash){
-        var _hash = _hash || window.location.hash;
-        // en
-        if(_hash == "#en"){
-            $select.selectedIndex = 1;
-            $en.style.display = "block";
-            $en.classList.add("active");
-            $zh.style.display = "none";
-            $zh.classList.remove("active");
-        // zh by default
-        }else{
-            // not trigger onChange, otherwise cause a loop call.
-            $select.selectedIndex = 0;
-            $zh.style.display = "block";
-            $zh.classList.add("active");
-            $en.style.display = "none";
-            $en.classList.remove("active");
-        }
-        // interop with catalog 
-        if ("") generateCatalog(".catalog-body");
-    }
-
-    // handle select change
-    function onLanChange(index){
-        if(index == 0){
-            _hash = "#zh"
-        }else{
-            _hash = "#en"
-        }
-        _render(_hash)
-    }
-
-    // init
-    _render();
-</script>
 
 
 
