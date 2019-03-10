@@ -26,9 +26,21 @@ description: "-----浑水摸鱼,瞎写代码-----"
         Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
     </p>
 </div>
+
 <hr>
 {% endfor %}
-
+<script>
+  (function() {
+    var cx = '010887924372284037340:lnbzf6ihd74';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
 <!-- Pager -->
 {% if paginator.total_pages > 1 %}
 <ul class="pager">

@@ -11,14 +11,14 @@
     <meta name="theme-color" content="#000000">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="「LeetCode」——「21」—— Merge Two Sorted Lists - 李竑緯的博客 | LeeHW">
+    <meta property="og:title" content="「LeetCode」——「26」—— Remove Duplicates from Sorted Array - 李竑緯的博客 | LeeHW">
     
     <meta property="og:type" content="article">
     <meta property="og:description" content="题目
 
 ">
     
-    <meta property="article:published_time" content="2019-03-07T00:00:00Z">
+    <meta property="article:published_time" content="2019-03-10T00:00:00Z">
     
     
     <meta property="article:author" content="LeeHW">
@@ -28,10 +28,10 @@
     
     
     <meta property="og:image" content="http://localhost:4000/img/avatar-hux-ny.jpg">
-    <meta property="og:url" content="http://localhost:4000/2019/03/07/LeetCode_21/">
+    <meta property="og:url" content="http://localhost:4000/2019/03/10/LeetCode_26/">
     <meta property="og:site_name" content="李竑緯的博客 | LeeHW">
     
-    <title>「LeetCode」——「21」—— Merge Two Sorted Lists - 李竑緯的博客 | LeeHW</title>
+    <title>「LeetCode」——「26」—— Remove Duplicates from Sorted Array - 李竑緯的博客 | LeeHW</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -40,7 +40,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/2019/03/07/LeetCode_21/">
+    <link rel="canonical" href="http://localhost:4000/2019/03/10/LeetCode_26/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -221,12 +221,12 @@
                         <a class="tag" href="/tags/#LeetCode_Easy" title="LeetCode_Easy">LeetCode_Easy</a>
                         
                     </div>
-                    <h1>「LeetCode」——「21」—— Merge Two Sorted Lists</h1>
+                    <h1>「LeetCode」——「26」—— Remove Duplicates from Sorted Array</h1>
                     
                     
                     <h2 class="subheading"> 记录打码。 </h2>
                     
-                    <span class="meta">Posted by LeeHW on March 7, 2019</span>
+                    <span class="meta">Posted by LeeHW on March 10, 2019</span>
                 </div>
             </div>
         </div>
@@ -248,14 +248,36 @@
 
 				<h2 id="题目">题目</h2>
 
-<p>Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.</p>
+<p>Given a sorted array <em>nums</em>, remove the duplicates <a href="https://en.wikipedia.org/wiki/In-place_algorithm"><strong>in-place</strong></a> such that each element appear only <em>once</em> and return the new length.</p>
 
-<p><strong>Example:</strong></p>
+<p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array in-place</strong> with O(1) extra memory.</p>
+
+<p><strong>Example 1:</strong></p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>Input: 1-&gt;2-&gt;4, 1-&gt;3-&gt;4
-Output: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>Given nums = [1,1,2],
+
+Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.
+
+It doesn't matter what you leave beyond the returned length.
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Example 2:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>Given nums = [0,0,1,1,1,2,2,3,3,4],
+
+Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.
+
+It doesn't matter what values are set beyond the returned length.
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <hr />
@@ -276,24 +298,18 @@ Output: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4
 12
 13
 14
-15
-16
-17
 </pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="n">ListNode</span><span class="o">*</span> <span class="n">mergeTwoLists</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">l1</span><span class="p">,</span> <span class="n">ListNode</span><span class="o">*</span> <span class="n">l2</span><span class="p">)</span> <span class="p">{</span>
-        
-        <span class="k">if</span><span class="p">(</span><span class="n">l1</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span> <span class="k">return</span> <span class="n">l2</span><span class="p">;</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">l2</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span> <span class="k">return</span> <span class="n">l1</span><span class="p">;</span>
-        
-        <span class="k">if</span><span class="p">(</span><span class="n">l1</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">l2</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">l1</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">mergeTwoLists</span><span class="p">(</span><span class="n">l1</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">,</span><span class="n">l2</span><span class="p">);</span>
-            <span class="k">return</span> <span class="n">l1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">removeDuplicates</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+                <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+            <span class="p">}</span>
         <span class="p">}</span>
-        
-        <span class="n">l2</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">mergeTwoLists</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span><span class="n">l2</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">);</span>
-        <span class="k">return</span> <span class="n">l2</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">};</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
@@ -302,21 +318,9 @@ Output: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4
 
 <h2 id="结语">结语</h2>
 
-<p>和不熟悉<code class="highlighter-rouge">递归</code>的同学分析一下<code class="highlighter-rouge">递归</code>：</p>
+<p>思路同27题。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre>TestCase
-l1=[1,5]
-l2=[2,6]
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p><img src="http://lihongwei.site/img/M􏰀ergeTw􏰁Lists.png" alt="M􏰀ergeTw􏰁Lists" /></p>
-
-<p>每层递归都是不同颜色的，<code class="highlighter-rouge">由深到浅</code>return回来。</p>
-
-<p>（emmmm不知道要怎么<code class="highlighter-rouge">图解</code>比较好，本菜鸡可能还是对<code class="highlighter-rouge">递归</code>理解不透吧）</p>
+<p>跳转：<a href="https://lihongwei.site/2019/03/10/LeetCode_27/">「LeetCode」——「27」—— Remove Element</a></p>
 
 
                             <!-- 打赏功能 -->
@@ -353,17 +357,17 @@ l2=[2,6]
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2019/03/05/LeetCode_69/" data-toggle="tooltip" data-placement="top" title="「LeetCode」——「69」—— Sqrt(x)">
+                        <a href="/2019/03/09/Learn/" data-toggle="tooltip" data-placement="top" title="C++基础知识整理（持续更新）">
                         Previous<br>
-                        <span>「LeetCode」——「69」—— Sqrt(x)</span>
+                        <span>C++基础知识整理（持续更新）</span>
                         </a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2019/03/09/Learn/" data-toggle="tooltip" data-placement="top" title="C++基础知识整理（持续更新）">
+                        <a href="/2019/03/10/LeetCode_27/" data-toggle="tooltip" data-placement="top" title="「LeetCode」——「27」—— Remove Element">
                         Next<br>
-                        <span>C++基础知识整理（持续更新）</span>
+                        <span>「LeetCode」——「27」—— Remove Element</span>
                         </a>
                     </li>
                     
