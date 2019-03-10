@@ -1,0 +1,118 @@
+---
+layout:     post
+title:      "「LeetCode」——「66」—— Plus One"
+subtitle:   " 记录打码。 "
+date:       2019-03-11 
+author:     "LeeHW"
+header-img: "img/post-bg-digital-native.jpg"
+catalog: true
+tags:
+    - LeetCode_Easy
+---
+
+## 题目
+
+Given a **non-empty** array of digits representing a non-negative integer, plus one to the integer.
+
+The digits are stored such that the most significant digit is at the head of the list, and each element in the array contain a single digit.
+
+You may assume the integer does not contain any leading zero, except the number 0 itself.
+
+**Example 1:**
+
+```
+Input: [1,2,3]
+Output: [1,2,4]
+Explanation: The array represents the integer 123.
+```
+
+**Example 2:**
+
+```
+Input: [4,3,2,1]
+Output: [4,3,2,2]
+Explanation: The array represents the integer 4321.
+```
+
+---
+
+## 代码
+
+```c++
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& digits) {
+        digits[digits.size()-1]+=1;//直接末尾+1
+        for(int i=digits.size()-1;i>=0;i--)
+        {
+            //解决最高位的进位
+            if(digits[i]/10==1&&i==0)
+            {
+                digits[i]=0;
+                digits.insert(digits.begin(),1);
+
+            }
+            //解决普通进位
+            if (digits[i]/10==1)
+            {
+                digits[i]=0;
+                digits[i-1]+=1;
+            }
+
+        }
+        return digits;
+    }
+};
+```
+
+
+
+---
+
+## 结语
+
+自己写的垃圾方法。
+
+Runtime: 8 ms, faster than 46.15% of C++ online submissions for Plus One.
+
+Memory Usage: 8.7 MB, less than 6.34% of C++ online submissions for Plus One.
+
+高效代码如下：
+
+```c++
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& digits) {
+        vector<int> res;
+        int len = digits.size();
+        bool flag = true;//进位标志 
+        for(int i = len-1;i>=0;i--){
+            if(flag){
+                //需要进位 且数字为9
+                if(digits[i]==9){
+                    digits[i]=0;
+                }
+                //数字+1 
+                //不会出现flag由false→true的情况
+                else{
+                    digits[i]++;
+                    flag = false;
+                }
+            }
+            else{
+                break;
+            }
+        }
+        //当digits[0]==10的情况
+        if(flag){
+            res.push_back(1);//先把1入栈
+        }
+        //把剩下进位完成的入栈
+        for(int i = 0;i<digits.size();i++){
+            res.push_back(digits[i]);
+        }
+        return res;
+    }
+};
+```
+
