@@ -37,6 +37,32 @@
     </div>
     <!-- /.container -->
 </nav>
+<!-- HTML elements for search-->
+<div id="search-container" style="float:right;position: fixed;right:0px; bottom:0px; z-index:999999;padding:0px 0px 0px 0px;">
+  <input type="text" id="search-input" placeholder="    Search Posts..." style="border:5px solid;border-radius:50px;padding-left:30px !important;" >
+  <ul id="results-container" style="max-width:1000px;"></ul>
+</div>
+
+<!-- script pointing to jekyll-search.js-->
+<script src="/js/simple-jekyll-search.min.js"></script>
+
+ <script>
+      window.simpleJekyllSearch = new SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/search.json',
+        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found',
+        limit: 5,
+        fuzzy: false,
+        exclude: ['Welcome']
+      })
+    </script>
+
+
+
+
+
 <script>
     // Drop Bootstarp low-performance Navbar
     // Use customize navbar with high-quality material design animation
