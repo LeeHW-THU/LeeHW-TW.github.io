@@ -51,4 +51,6 @@ public:
 
 ## 结语
 
-与27题同类型。
+思路同27题。
+
+跳转：[「LeetCode」——「27」—— Remove Element](https://lihongwei.site/2019/03/10/LeetCode_27/)
