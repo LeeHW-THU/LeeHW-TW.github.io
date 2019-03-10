@@ -2,19 +2,6 @@
 layout: page
 description: "-----浑水摸鱼,瞎写代码-----"
 ---
-<script>
-  (function() {
-    var cx = '010887924372284037340:lnbzf6ihd74';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:search></gcse:search>
-
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">

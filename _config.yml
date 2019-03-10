@@ -10,7 +10,8 @@ baseurl: ""                          # for example, '/blog' if your blog hosted 
 
 # Publish posts or collection documents with a future date.
 future: true
-
+# Search
+search: true
 # SNS settings
 RSS: true
 #weibo_username:     huxpro
