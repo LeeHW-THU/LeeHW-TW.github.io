@@ -78,8 +78,8 @@ gitalk:
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: 'UA-135687925-1'            # Format: UA-xxxxxx-xx
-ga_domain: LeeHW-site
+ga_track_id: 'UA-136395211-1'            # Format: UA-xxxxxx-xx
+ga_domain: lihongwei.site
 
 
 
