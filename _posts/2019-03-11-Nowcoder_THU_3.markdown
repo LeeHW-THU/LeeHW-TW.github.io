@@ -7,7 +7,7 @@ author:     "LeeHW"
 header-img: "img/post-bg-digital-native.jpg"
 catalog: true
 tags:
-    - Nowcoder_THU
+    - NowCoder
 ---
 
 ## 题目
