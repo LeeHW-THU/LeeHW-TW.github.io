@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "远程访问内网服务器"
+title:      "「remote」—— 远程访问内网服务器"
 subtitle:   " 记录打码。 "
 date:       2019-11-10 
 author:     "LeeHW"
@@ -12,11 +12,11 @@ tags:
 
 ## 前提
 
-| 机器号        |      IP       |   用户名   | 备注                                          |
-| ------------- | :-----------: | :--------: | --------------------------------------------- |
-| In_server     |   <host_In>   | <name_In>  | 处于内网，可访问Public_server                 |
-| Public_server | <host_Public> | <name_Out> | 处于公网，不可访问server                      |
-| computer      |      --       |     --     | 处于公网，不可访问server，可访问Public_server |
+| 机器号        |     IP      |  用户名  | 备注                                          |
+| ------------- | :---------: | :------: | --------------------------------------------- |
+| In_server     |   host_In   | name_In  | 处于内网，可访问Public_server                 |
+| Public_server | host_Public | name_Out | 处于公网，不可访问server                      |
+| computer      |     --      |    --    | 处于公网，不可访问server，可访问Public_server |
 
 **需要一个公网server（相信很多科学上网的小伙伴都有）**
 
@@ -28,7 +28,7 @@ tags:
 
 ```shell
 #Step_1 把本地的22端口映射到<host_Public>的20001端口，-o后的参数作用是保证连接(心跳)
-ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=60 -fCNR 20001:localhost:22 <name_Out>@<host_Public>
+ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=60 -fCNR 20001:localhost:22 name_Out@host_Public
 ```
 
 
@@ -49,7 +49,7 @@ ssh -fCNL *:20002:localhost:20001 localhost
 ```shell
 #访问Public_server的20002端口
 #注意 要使用<name_In>去访问<host_Public>，因为20002端口已经被转发到<host_In>了
-ssh -p 20002 <name_In>@<host_Public>
+ssh -p 20002 name_In@host_Public
 ```
 
 
@@ -69,3 +69,4 @@ ssh -p 20002 <name_In>@<host_Public>
 lsof -i:20002
 ```
 
+​	4) 如果遇到掉线情况，请调整ServerAliveInterval、ServerAliveCountMax后的参数保证连接。
